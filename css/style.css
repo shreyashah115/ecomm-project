@@ -1,1 +1,45 @@
 /* Note there a few "reset" styles given in reset.css. Review those before you begin */
+
+.logo img {
+  display: block;
+  margin-left: 1em;
+}
+
+.page-header {
+  position: relative;
+}
+
+.nav-toggle {
+  position: absolute;
+  right: 0;
+}
+
+.navigation {
+  position: absolute;
+  right: 1em;
+  top: 2em;
+}
+
+.container {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+input[type=search] {
+  border: 2px solid #ccc;
+  border-radius: 2em;
+  font-size: 1em;
+  width: 135%;
+  margin-left: 1em;
+  background-color: white;
+  background-image: url('/img/search-bar/1x/search.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+.additional-links {
+  padding: 1em;
+}
