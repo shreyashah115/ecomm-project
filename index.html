@@ -150,6 +150,27 @@
               <form class="filters-2">
                 <div class="filter-options">
                   <fieldset>
+                    <legend>Type</legend>
+                    <ol class="filter-list">
+                      <li>
+                        <input type="checkbox" name="size" value="xs" id="xs" />
+                        <label for="storage">Beds with Storage</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="size" value="sm" id="sm" />
+                        <label for="twin">Twin Beds</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="size" value="md" id="md" />
+                        <label for="full">Full Beds</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="size" value="lg" id="lg" />
+                        <label for="kids">Kids Beds</label>
+                      </li>
+                    </ol>
+                  </fieldset>
+                  <fieldset>
                     <legend>Colour</legend>
                     <ul class="filter-list">
                       <li>
@@ -200,31 +221,6 @@
                     </ul>
                   </fieldset>
                   <fieldset>
-                    <legend>Sizes</legend>
-                    <ol class="filter-list">
-                      <li>
-                        <input type="checkbox" name="size" value="xs" id="xs" />
-                        <label for="xs">XS</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" name="size" value="sm" id="sm" />
-                        <label for="sm">S</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" name="size" value="md" id="md" />
-                        <label for="md">M</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" name="size" value="lg" id="lg" />
-                        <label for="lg">L</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" name="size" value="xl" id="xl" />
-                        <label for="xl">XL</label>
-                      </li>
-                    </ol>
-                  </fieldset>
-                  <fieldset>
                     <legend>Ratings (above)</legend>
                     <ol class="filter-list">
                       <li>
@@ -235,11 +231,10 @@
                           id="aboveFour"
                         />
                         <label for="aboveFour">
-                          <span class="material-icons">star</span
-                          ><span class="material-icons">star</span
-                          ><span class="material-icons">star</span
-                          ><span class="material-icons">star</span
-                          ><span class="material-icons">star_border</span>
+                          <span class="material-icons-round"> star_rate </span>
+                          <span class="material-icons-round"> star_rate </span>
+                          <span class="material-icons-round"> star_rate </span>
+                          <span class="material-icons-round"> star_rate </span>
                         </label>
                       </li>
                       <li>
@@ -250,11 +245,9 @@
                           id="aboveThree"
                         />
                         <label for="aboveThree">
-                          <span class="material-icons">star</span
-                          ><span class="material-icons">star</span
-                          ><span class="material-icons">star</span
-                          ><span class="material-icons">star_border</span
-                          ><span class="material-icons">star_border</span>
+                          <span class="material-icons-round"> star_rate </span>
+                          <span class="material-icons-round"> star_rate </span>
+                          <span class="material-icons-round"> star_rate </span>
                         </label>
                       </li>
                       <li>
@@ -265,11 +258,8 @@
                           id="aboveTwo"
                         />
                         <label for="aboveTwo">
-                          <span class="material-icons">star</span
-                          ><span class="material-icons">star</span
-                          ><span class="material-icons">star_border</span
-                          ><span class="material-icons">star_border</span
-                          ><span class="material-icons">star_border</span>
+                          <span class="material-icons-round"> star_rate </span>
+                          <span class="material-icons-round"> star_rate </span>
                         </label>
                       </li>
                       <li>
@@ -280,22 +270,19 @@
                           id="aboveOne"
                         />
                         <label for="aboveOne">
-                          <span class="material-icons">star</span
-                          ><span class="material-icons">star_border</span
-                          ><span class="material-icons">star_border</span
-                          ><span class="material-icons">star_border</span
-                          ><span class="material-icons">star_border</span>
+                          <span class="material-icons-round"> star_rate </span>
                         </label>
                       </li>
                     </ol>
                   </fieldset>
                 </div>
                 <fieldset>
-                  <label for="sort">Sort</label>
+                  <label for="sort">Sort by</label>
                   <select name="sort" id="sort">
-                    <option value="price-high">Price, highest to lowest</option>
-                    <option value="price-low">Price, lowest to highest</option>
-                    <option value="newest">Newest releases</option>
+                    <option value="best">Best match</option>
+                    <option value="price-low">Price: low to high</option>
+                    <option value="price-high">Price: high to low</option>
+                    <option value="newest">Newest</option>
                   </select>
                 </fieldset>
                 <button type="submit">Apply</button>
@@ -313,69 +300,69 @@
         <!-- Product 1 -->
         <article class="product">
           <header>
-            <!-- <img src="img/product.jpg" alt="Product Image" /> -->
-            <h3>Product Name</h3>
-            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-            <p>
-              Here is a shot of this product that might entice a user to click
-              and add it to their cart.
-            </p>
-            <dl>
-              <dt>Rating</dt>
-              <dd>
-                4.4 <span class="material-icons">star</span
-                ><span class="material-icons">star</span
-                ><span class="material-icons">star</span
-                ><span class="material-icons">star</span
-                ><span class="material-icons">star_half</span>
-              </dd>
-            </dl>
-            <a href="#">see more</a>
+            <div class="image-container">
+              <img
+                class="product"
+                src="img/bed-mobile/black.png"
+                alt="Black bed"
+              />
+            </div>
+
+            <h3>MALM</h3>
+            <p>High bed frame/2 storage boxes, Queen</p>
+            <data value="356"><strong>$356.00</strong></data>
+            <div class="ratings">
+              <span class="material-icons-round"> star_rate </span>
+              <span class="material-icons-round"> star_rate </span>
+              <span class="material-icons-round"> star_rate </span>
+              <span class="material-icons-round"> star_rate </span>
+              <span class="icon" <?xml version="1.0" encoding="utf-8" ?>
+                <!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 24 24"
+                  style="enable-background: new 0 0 24 24"
+                  xml:space="preserve"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: none;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                      stroke: #000000;
+                      stroke-miterlimit: 10;
+                    }
+                  </style>
+                  <g>
+                    <rect class="st0" width="24" height="24" />
+                    <path
+                      class="st1"
+                      d="M14.1,9.3l-1.5-4.8c-0.3-1-1.6-1-1.9,0L9.3,9.3H4.8c-1,0-1.4,1.2-0.6,1.8l3.6,2.6l-1.4,4.6
+                    C6.2,19.3,7.3,20,8,19.5l3.7-2.8l3.7,2.8c0.8,0.6,1.9-0.2,1.6-1.1l-1.4-4.6l3.6-2.6c0.8-0.6,0.4-1.8-0.6-1.8L14.1,9.3L14.1,9.3z"
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>(26 ratings)</span>
+            </div>
+
+            <a href="#">View more details</a>
           </header>
-          <form>
-            <fieldset>
-              <legend>Colours</legend>
-              <ul>
-                <li>
-                  <label
-                    ><input type="radio" name="colour" value="r" /> Red</label
-                  >
-                </li>
-                <li>
-                  <label
-                    ><input type="radio" name="colour" value="w" /> White</label
-                  >
-                </li>
-                <li>
-                  <label
-                    ><input type="radio" name="colour" value="b" /> Blue</label
-                  >
-                </li>
-              </ul>
-            </fieldset>
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol>
-                <li>
-                  <label><input type="radio" name="size" value="m" /> M</label>
-                </li>
-                <li>
-                  <label><input type="radio" name="size" value="l" /> L</label>
-                </li>
-                <li>
-                  <label
-                    ><input type="radio" name="size" value="xl" /> XL</label
-                  >
-                </li>
-              </ol>
-            </fieldset>
-          </form>
-          <footer>
-            <button type="button">
-              <span class="material-icons">add_shopping_cart</span> Add to Cart
+
+          <footer class="product-footer">
+            <button type="button" class="fake-button add-cart">
+              <span class="material-icons-round"> add_shopping_cart </span> Add
+              to Cart
             </button>
-            <button type="button">
-              <span class="material-icons">favorite</span>
+            <button type="button" class="fake-button add-wishlist">
+              <span class="material-icons-round add-fav">favorite_border</span>
+              Add to wishlist
             </button>
           </footer>
         </article>

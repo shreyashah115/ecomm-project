@@ -44,10 +44,6 @@ input[type=search] {
   padding: 1em;
 }
 
-.filter-sort {
-  margin-block-start: 1.67em;
-}
-
 .btn-filters {
   display: flex;
   align-items: center;
@@ -141,4 +137,45 @@ button[type=submit] {
 .heading {
   display: flex;
   justify-content: space-between;
+}
+
+.product {
+  width: 100%;
+  height: auto;
+}
+
+.image-container {
+  width: 100%;
+  background-color: rgb(182, 182, 182);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.ratings {
+  display: flex;
+  margin-left: -5px;
+}
+
+.add-cart {
+  width: 10em;
+  height: 2.5em;
+  margin-right: 1em;
+}
+
+.product-footer {
+  display: flex;
+
+}
+
+.add-wishlist {
+  width: 11em;
+  height: 2.5em;
 }
