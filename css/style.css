@@ -1,8 +1,9 @@
 /* Note there a few "reset" styles given in reset.css. Review those before you begin */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
 .logo img {
   display: block;
-  margin-left: 1em;
 }
 
 .page-header {
@@ -32,7 +33,6 @@ input[type=search] {
   border-radius: 2em;
   font-size: 1em;
   width: 135%;
-  margin-left: 1em;
   background-color: white;
   background-image: url('/img/search-bar/1x/search.png');
   background-position: 10px 10px; 
@@ -42,4 +42,103 @@ input[type=search] {
 
 .additional-links {
   padding: 1em;
+}
+
+.filter-sort {
+  margin-block-start: 1.67em;
+}
+
+.btn-filters {
+  display: flex;
+  align-items: center;
+  padding: 0.1em;
+  width: 7em;
+  height: 3em;
+  text-align: right;
+  font-size: 1em;
+  margin-top: 1.5em;
+  border: 1px solid #cacaca;
+  border-radius: 2em;
+  background-color: white;
+  font-weight: 700;
+  justify-content: space-evenly;
+}
+
+.filters-icon {
+  width: 24px;
+  height: auto;
+}
+
+.fake-button {
+  display: flex;
+  align-items: center;
+  padding: 0.1em;
+  width: 7em;
+  height: 3em;
+  text-align: right;
+  font-size: 1em;
+  margin-top: 1.5em;
+  border: 1px solid #cacaca;
+  border-radius: 2em;
+  background-color: white;
+  color: #000000;
+  font-weight: 700;
+  justify-content: space-evenly;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 85%;
+  position: relative;
+}
+
+.popup .close {
+  position: absolute;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+button[type=submit] {
+  padding: 0.1em;
+  width: 7em;
+  height: 2em;
+  text-align: center;
+  font-size: 1em;
+  margin-top: 1.5em;
+  border: 1px solid #cacaca;
+  border-radius: 2em;
+  color: #fff;
+  background-color: rgb(124, 124, 226);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
 }
