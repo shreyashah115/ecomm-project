@@ -5,9 +5,13 @@ html {
 	box-sizing: border-box;
 	font-family: 'Noto Sans JP', sans-serif;
 }
-/* body {
+body {
 	margin: 0;
-} */
+}
+
+main, .container {
+	margin: 1em;
+}
 
 a {
 	text-decoration: none;

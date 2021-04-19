@@ -4,6 +4,7 @@
 
 .logo img {
   display: block;
+  margin: 1em;
 }
 
 .page-header {
@@ -178,4 +179,37 @@ button[type=submit] {
 .add-wishlist {
   width: 11em;
   height: 2.5em;
+}
+
+.page-footer {
+  margin: 0;
+  background-color: rgb(53, 69, 86);
+  padding: 1em;
+}
+
+.pages {
+  display: inline-flex;
+}
+
+.mobile-app {
+  width: 20em;
+  margin: 1em auto;
+}
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fab {
+  text-decoration: none;
+  color:rgb(237, 216, 81);
+}
+
+.copyright, .legal li a{
+  color: #ffffff;
+}
+
+.material-icons-round {
+color:rgb(53, 69, 86);
 }
