@@ -29,18 +29,20 @@
       <a href="index.html" class="logo">
         <img src="img/siesta-mobile.png" alt="logo" />
       </a>
-
+      <!-- <ul class="menu">
+        <li>
+          <a href="#">Products</a>
+        </li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">What's New</a></li>
+        <li><a href="#">My Profile</a></li>
+      </ul> -->
       <!-- Navigation menu and toggle button (non-functional) -->
       <nav aria-label="Primary" class="navigation">
         <span class="material-icons-round nav-toggle">menu</span>
         <ul class="menu">
           <li>
             <a href="#">Products</a>
-            <!-- <ul class="submenu">
-              <li><a href="#">Subcategory</a></li>
-              <li><a href="#">Subcategory</a></li>
-              <li><a href="#">Subcategory</a></li>
-            </ul> -->
           </li>
           <li><a href="#">Offers</a></li>
           <li><a href="#">What's New</a></li>
@@ -75,7 +77,7 @@
     <main class="products">
       <header class="heading">
         <h1>Products</h1>
-        <a href="#popup1" class="fake-button">
+        <a href="#popup1" class="fake-button dialog">
           <?xml version="1.0" ?><svg
             class="filters-icon"
             viewBox="0 0 32 32"
@@ -110,42 +112,111 @@
           </svg>
           <p>Filters</p>
         </a>
-        <!-- <button class="btn-filters">
-            <?xml version="1.0" ?><svg
-              class="filters-icon"
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <style>
-                  .cls-1 {
-                    fill: none;
-                  }
-                </style>
-              </defs>
-              <title />
-              <g data-name="Layer 2" id="Layer_2">
-                <path d="M28,9H11a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
-                <path d="M7,9H4A1,1,0,0,1,4,7H7A1,1,0,0,1,7,9Z" />
-                <path d="M21,17H4a1,1,0,0,1,0-2H21a1,1,0,0,1,0,2Z" />
-                <path d="M11,25H4a1,1,0,0,1,0-2h7a1,1,0,0,1,0,2Z" />
-                <path
-                  d="M9,11a3,3,0,1,1,3-3A3,3,0,0,1,9,11ZM9,7a1,1,0,1,0,1,1A1,1,0,0,0,9,7Z"
-                />
-                <path
-                  d="M23,19a3,3,0,1,1,3-3A3,3,0,0,1,23,19Zm0-4a1,1,0,1,0,1,1A1,1,0,0,0,23,15Z"
-                />
-                <path
-                  d="M13,27a3,3,0,1,1,3-3A3,3,0,0,1,13,27Zm0-4a1,1,0,1,0,1,1A1,1,0,0,0,13,23Z"
-                />
-                <path d="M28,17H25a1,1,0,0,1,0-2h3a1,1,0,0,1,0,2Z" />
-                <path d="M28,25H15a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
-              </g>
-              <g id="frame"><rect class="cls-1" height="32" width="32" /></g>
-            </svg>
-            <p>Filters</p>
-            <!-- Filters -->
-        <!-- </button> -->
+
+        <form class="filters-large">
+          <div class="filter-options-large">
+            <fieldset>
+              <legend>Type</legend>
+              <ol class="filter-list-large">
+                <li>
+                  <input type="checkbox" name="size" value="xs" id="xs" />
+                  <label for="storage">Beds with Storage</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="size" value="sm" id="sm" />
+                  <label for="twin">Twin Beds</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="size" value="md" id="md" />
+                  <label for="full">Full Beds</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="size" value="lg" id="lg" />
+                  <label for="kids">Kids Beds</label>
+                </li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>Colour</legend>
+              <ul class="filter-list-large">
+                <li>
+                  <input
+                    type="checkbox"
+                    name="colour"
+                    value="black"
+                    id="black"
+                  />
+                  <label for="black">Black</label>
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    name="colour"
+                    value="white"
+                    id="white"
+                  />
+                  <label for="white">White</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="colour" value="grey" id="grey" />
+                  <label for="grey">Grey</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="colour" value="red" id="red" />
+                  <label for="red">Red</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="colour" value="blue" id="blue" />
+                  <label for="blue">Blue</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>Ratings (above)</legend>
+              <ol class="filter-list-large">
+                <li>
+                  <input type="radio" name="rating" value="4" id="aboveFour" />
+                  <label for="aboveFour">
+                    <span class="material-icons-round"> star_rate </span>
+                    <span class="material-icons-round"> star_rate </span>
+                    <span class="material-icons-round"> star_rate </span>
+                    <span class="material-icons-round"> star_rate </span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="3" id="aboveThree" />
+                  <label for="aboveThree">
+                    <span class="material-icons-round"> star_rate </span>
+                    <span class="material-icons-round"> star_rate </span>
+                    <span class="material-icons-round"> star_rate </span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="2" id="aboveTwo" />
+                  <label for="aboveTwo">
+                    <span class="material-icons-round"> star_rate </span>
+                    <span class="material-icons-round"> star_rate </span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="1" id="aboveOne" />
+                  <label for="aboveOne">
+                    <span class="material-icons-round"> star_rate </span>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+          </div>
+          <fieldset>
+            <label for="sort">Sort by</label>
+            <select name="sort" id="sort">
+              <option value="best">Best match</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="newest">Newest</option>
+            </select>
+          </fieldset>
+        </form>
 
         <div id="popup1" class="overlay">
           <div class="popup">
@@ -301,9 +372,9 @@
       </header>
 
       <!-- Filtering product form -->
-
+      <h2 class="subheading">Results</h2>
       <section class="results">
-        <h2 class="subheading">Results</h2>
+
 
         <!-- Product 1 -->
         <article class="product">
@@ -311,7 +382,15 @@
             <div class="image-container">
               <img
                 class="product"
-                src="img/bed-mobile/black.png"
+                srcset="
+                  img/bed-large/black.png  1920w,
+                  img/bed-large/black.png   960w,
+                  img/bed-mobile/black.png  480w
+                "
+                sizes="(min-width: 1920px) 500px,
+              (min-width: 800px) 500px,
+              480px"
+                src="img/bed-large/black.png"
                 alt="Black bed"
               />
             </div>
@@ -381,7 +460,15 @@
             <div class="image-container">
               <img
                 class="product"
-                src="img/bed-mobile/white.png"
+                srcset="
+                  img/bed-large/white.png  1920w,
+                  img/bed-large/white.png   960w,
+                  img/bed-mobile/white.png  480w
+                "
+                sizes="(min-width: 1920px) 500px,
+            (min-width: 800px) 500px,
+            480px"
+                src="img/bed-large/white.png"
                 alt="White bed"
               />
             </div>
@@ -455,7 +542,15 @@
             <div class="image-container">
               <img
                 class="product"
-                src="img/bed-mobile/grey.png"
+                srcset="
+                  img/bed-large/grey.png  1920w,
+                  img/bed-large/grey.png   960w,
+                  img/bed-mobile/grey.png  480w
+                "
+                sizes="(min-width: 1920px) 500px,
+            (min-width: 800px) 500px,
+            480px"
+                src="img/bed-large/grey.png"
                 alt="Grey bed"
               />
             </div>
@@ -525,7 +620,15 @@
             <div class="image-container">
               <img
                 class="product"
-                src="img/bed-mobile/beige.png"
+                srcset="
+                  img/bed-large/beige.png  1920w,
+                  img/bed-large/beige.png   960w,
+                  img/bed-mobile/beige.png  480w
+                "
+                sizes="(min-width: 1920px) 500px,
+            (min-width: 800px) 500px,
+            480px"
+                src="img/bed-large/beige.png"
                 alt="Beige bed"
               />
             </div>
@@ -628,8 +731,16 @@
             <div class="image-container">
               <img
                 class="product"
-                src="img/bed-mobile/black.png"
-                alt="Black bed"
+                srcset="
+                  img/bed-large/white.png  1920w,
+                  img/bed-large/white.png   960w,
+                  img/bed-mobile/white.png  480w
+                "
+                sizes="(min-width: 1920px) 500px,
+            (min-width: 800px) 500px,
+            480px"
+                src="img/bed-large/white.png"
+                alt="White bed"
               />
             </div>
 
@@ -698,8 +809,16 @@
             <div class="image-container">
               <img
                 class="product"
-                src="img/bed-mobile/black.png"
-                alt="Black bed"
+                srcset="
+                  img/bed-large/white.png  1920w,
+                  img/bed-large/white.png   960w,
+                  img/bed-mobile/white.png  480w
+                "
+                sizes="(min-width: 1920px) 500px,
+            (min-width: 800px) 500px,
+            480px"
+                src="img/bed-large/white.png"
+                alt="White bed"
               />
             </div>
 
@@ -795,16 +914,13 @@
         </li>
       </ul>
       <nav aria-label="Legal">
-
         <ul class="legal">
-          <li><a href="#" >Terms of Use</a></li>
-          <li><a href="#" >Privacy Policy</a></li>
-          <li><a href="#" >Accessibility Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Accessibility Policy</a></li>
         </ul>
       </nav>
-      <p class="copyright">
-        Copyright © 1970
-      </p>
+      <p class="copyright">Copyright © Siesta - 2021</p>
     </footer>
   </body>
 </html>
