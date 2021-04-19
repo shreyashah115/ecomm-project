@@ -64,7 +64,9 @@
         </form>
         <div class="additional-links">
           <a href="#">
-            <span class="material-icons-round favorite_border"> favorite_border </span>
+            <span class="material-icons-round favorite_border">
+              favorite_border
+            </span>
           </a>
 
           <a href="#">
@@ -114,110 +116,145 @@
         </a>
 
         <form class="filters-large">
-          <div class="filter-options-large">
-            <fieldset>
-              <legend>Type</legend>
-              <ol class="filter-list-large">
-                <li>
-                  <input type="checkbox" name="size" value="xs" id="xs" />
-                  <label for="storage">Beds with Storage</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="size" value="sm" id="sm" />
-                  <label for="twin">Twin Beds</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="size" value="md" id="md" />
-                  <label for="full">Full Beds</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="size" value="lg" id="lg" />
-                  <label for="kids">Kids Beds</label>
-                </li>
-              </ol>
-            </fieldset>
-            <fieldset>
-              <legend>Colour</legend>
-              <ul class="filter-list-large">
-                <li>
-                  <input
-                    type="checkbox"
-                    name="colour"
-                    value="black"
-                    id="black"
-                  />
-                  <label for="black">Black</label>
-                </li>
-                <li>
-                  <input
-                    type="checkbox"
-                    name="colour"
-                    value="white"
-                    id="white"
-                  />
-                  <label for="white">White</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="colour" value="grey" id="grey" />
-                  <label for="grey">Grey</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="colour" value="red" id="red" />
-                  <label for="red">Red</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="colour" value="blue" id="blue" />
-                  <label for="blue">Blue</label>
-                </li>
-              </ul>
-            </fieldset>
-            <fieldset>
-              <legend>Ratings (above)</legend>
-              <ol class="filter-list-large">
-                <li>
-                  <input type="radio" name="rating" value="4" id="aboveFour" />
-                  <label for="aboveFour">
-                    <span class="material-icons-round"> star_rate </span>
-                    <span class="material-icons-round"> star_rate </span>
-                    <span class="material-icons-round"> star_rate </span>
-                    <span class="material-icons-round"> star_rate </span>
-                  </label>
-                </li>
-                <li>
-                  <input type="radio" name="rating" value="3" id="aboveThree" />
-                  <label for="aboveThree">
-                    <span class="material-icons-round"> star_rate </span>
-                    <span class="material-icons-round"> star_rate </span>
-                    <span class="material-icons-round"> star_rate </span>
-                  </label>
-                </li>
-                <li>
-                  <input type="radio" name="rating" value="2" id="aboveTwo" />
-                  <label for="aboveTwo">
-                    <span class="material-icons-round"> star_rate </span>
-                    <span class="material-icons-round"> star_rate </span>
-                  </label>
-                </li>
-                <li>
-                  <input type="radio" name="rating" value="1" id="aboveOne" />
-                  <label for="aboveOne">
-                    <span class="material-icons-round"> star_rate </span>
-                  </label>
-                </li>
-              </ol>
-            </fieldset>
-          </div>
-          <fieldset>
-            <label for="sort">Sort by</label>
-            <select name="sort" id="sort">
-              <option value="best">Best match</option>
-              <option value="price-low">Price: low to high</option>
-              <option value="price-high">Price: high to low</option>
-              <option value="newest">Newest</option>
-            </select>
-          </fieldset>
+          <details>
+            <summary>
+              Filters
+              <svg
+                class="Icon Icon--select-arrow"
+                width="6"
+                height="8"
+                viewBox="0 0 6 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.76837e-07 -2.93462e-07L3.04478 0.223788L6 0L3.04478 7.83258L4.76837e-07 -2.93462e-07Z"
+                  fill="#231F20"
+                ></path>
+              </svg>
+            </summary>
+            <div class="filter-options-large">
+              <div class="type">
+                <h4>Type</h4>
+                <ol class="filter-list-large">
+                  <li>
+                    <input type="checkbox" name="size" value="xs" id="xs" />
+                    <label for="storage">Beds with Storage</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="size" value="sm" id="sm" />
+                    <label for="twin">Twin Beds</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="size" value="md" id="md" />
+                    <label for="full">Full Beds</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="size" value="lg" id="lg" />
+                    <label for="kids">Kids Beds</label>
+                  </li>
+                </ol>
+              </div>
+              <div class="color">
+                <h4>Color</h4>
+                <ul class="filter-list-large">
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="colour"
+                      value="black"
+                      id="black"
+                    />
+                    <label for="black">Black</label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="colour"
+                      value="white"
+                      id="white"
+                    />
+                    <label for="white">White</label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="colour"
+                      value="grey"
+                      id="grey"
+                    />
+                    <label for="grey">Grey</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="colour" value="red" id="red" />
+                    <label for="red">Red</label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="colour"
+                      value="blue"
+                      id="blue"
+                    />
+                    <label for="blue">Blue</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="ratings-bar">
+                <h4>Ratings (above)</h4>
+                <ol class="filter-list-large">
+                  <li>
+                    <input
+                      type="radio"
+                      name="rating"
+                      value="4"
+                      id="aboveFour"
+                    />
+                    <label for="aboveFour">
+                      <span class="material-icons-round"> star_rate </span>
+                      <span class="material-icons-round"> star_rate </span>
+                      <span class="material-icons-round"> star_rate </span>
+                      <span class="material-icons-round"> star_rate </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="rating"
+                      value="3"
+                      id="aboveThree"
+                    />
+                    <label for="aboveThree">
+                      <span class="material-icons-round"> star_rate </span>
+                      <span class="material-icons-round"> star_rate </span>
+                      <span class="material-icons-round"> star_rate </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="radio" name="rating" value="2" id="aboveTwo" />
+                    <label for="aboveTwo">
+                      <span class="material-icons-round"> star_rate </span>
+                      <span class="material-icons-round"> star_rate </span>
+                    </label>
+                  </li>
+                  <li>
+                    <input type="radio" name="rating" value="1" id="aboveOne" />
+                    <label for="aboveOne">
+                      <span class="material-icons-round"> star_rate </span>
+                    </label>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </details>
         </form>
-
+        <label for="sort">Sort by</label>
+        <select name="sort" id="sort">
+          <option value="best">Best match</option>
+          <option value="price-low">Price: low to high</option>
+          <option value="price-high">Price: high to low</option>
+          <option value="newest">Newest</option>
+        </select>
         <div id="popup1" class="overlay">
           <div class="popup">
             <h2>

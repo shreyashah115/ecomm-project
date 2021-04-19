@@ -81,6 +81,13 @@ input[type=search] {
   margin-right: 1em;
   }
 
+select#sort {
+  padding: 0.5em 1.7em 0.5em 0.7em;
+  border: 1px solid #cacaca;
+  border-radius: 2em;
+  width: 10em;
+}
+
 .fake-button {
   display: flex;
   align-items: center;
@@ -302,6 +309,7 @@ a.fake-button.dialog {
 
 .filter-options-large {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -327,4 +335,11 @@ a.fake-button.dialog {
   margin-right: 2em;
 }
 
+.heading {
+  display: block;
+}
+details > summary:first-of-type {
+  cursor: pointer;
+  list-style-type: none;
+}
 }
