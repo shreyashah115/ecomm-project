@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+span.material-icons-round.favorite_border {
+  color:rgb(247 104 128);
+ }
+
 .nav.pagination {
   flex-direction: column;
   align-items: center;
@@ -281,6 +285,11 @@ input[type=search] {
   width: 200%;
 }
 
+ span.material-icons-round.favorite_border {
+  color:rgb(247 104 128);
+ }
+
+
 .page-header .material-icons-round {
   color: rgb(53, 69, 86);
   font-size: 2.5em;
@@ -317,7 +326,5 @@ a.fake-button.dialog {
 .social > li {
   margin-right: 2em;
 }
-
-
 
 }
