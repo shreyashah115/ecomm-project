@@ -206,7 +206,7 @@ button[type=submit] {
 }
 
 .add-wishlist {
-  width: 11em;
+  width: 10em;
   height: 2.5em;
   font-weight: 500;
   color: rgb(101, 148, 235);
@@ -236,6 +236,10 @@ button[type=submit] {
   text-decoration: none;
   color:rgb(237, 216, 81);
 }
+
+ span.material-icons-round.add-fav, material-icons-round.favorite_border  {
+  color: rgb(247 104 128);
+ }
 
 .copyright, .legal li a{
   color: #ffffff;
@@ -286,6 +290,22 @@ color:rgb(53, 69, 86);
     padding: 1em;
   }
   
+  .menu-links {
+    color: rgb(101, 148, 235);
+    background: linear-gradient(to right, rgb(5, 60, 119), rgb(5, 60, 119) 50%, rgb(101, 148, 235) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none; 
+  }
+  
+.menu-links:hover {
+    background-position: 0 100%;
+  }
+
   .container {
     margin: 1em;
   }
@@ -294,12 +314,6 @@ color:rgb(53, 69, 86);
     padding-left: 5em;
     margin-top: 0.5em;
   }
-
-  
-   span.material-icons-round.favorite_border {
-    color:rgb(247 104 128);
-   }
-  
   
   .page-header .material-icons-round {
     color: rgb(53, 69, 86);
