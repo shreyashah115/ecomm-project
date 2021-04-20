@@ -2,10 +2,26 @@
 @media screen and (min-width: 70em) {
   .product-header {
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   
   .product-details {
     padding-left: 10em;
+  }
+  .add-buttons {
+    display: flex;
+  }
+  .product-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (min-width: 90em) {
+  .product-header {
+    grid-template-columns: 0.5fr 1fr;
   }
 }
