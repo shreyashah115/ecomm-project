@@ -44,7 +44,7 @@ input[type=search] {
   border: 2px solid #ccc;
   border-radius: 2em;
   font-size: 1em;
-  /* width: 135%; */
+  width: 135%;
   background-color: white;
   background-image: url('../img/search-bar/1x/search.png');
   background-position: 10px 10px; 

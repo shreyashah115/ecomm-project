@@ -1,0 +1,11 @@
+
+@media screen and (min-width: 70em) {
+  .product-header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+  }
+  
+  .product-details {
+    padding-left: 10em;
+  }
+}
