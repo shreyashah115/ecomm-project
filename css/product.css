@@ -1,4 +1,37 @@
 
+.color-buttons {
+  padding: 0.2em 0.5em;
+  margin-right: 1em;
+}
+
+.color-buttons:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+
+}
+
+
+
+button.color-buttons.white {
+  border: 1px solid black;
+  background-color: white;
+  color: white;
+}
+
+button.color-buttons.black {
+  border: 1px solid black;
+  background-color: black;
+  color: black;
+}
+
+button.color-buttons.beige {
+  border: 1px solid black;
+  background-color: rgb(240, 195, 111);
+  color: rgb(240, 195, 111);
+}
+
 @media screen and (min-width: 70em) {
   .product-header {
     display: grid;
@@ -21,7 +54,5 @@
 
 
 @media screen and (min-width: 90em) {
-  .product-header {
-    grid-template-columns: 0.5fr 1fr;
-  }
+
 }
