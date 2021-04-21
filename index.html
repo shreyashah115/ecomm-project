@@ -410,33 +410,38 @@
         <!-- Product 1 -->
         <article class="product">
           <header>
-            <div class="image-container">
-              <img
-                class="product"
+            <a href="product.html">
+
+              <div class="image-container">
+                <img
+                  class="product"
+                  srcset="
+                    img/bed-large/black.png  1920w,
+                    img/bed-large/black.png   960w,
+                    img/bed-mobile/black.png  480w
+                  "
+                  sizes="(min-width: 1920px) 500px,
+                (min-width: 800px) 500px,
+                480px"
+                  src="img/bed-large/black.png"
+                  alt="Black bed"
+                />
+                <img
+                class="product-2"
                 srcset="
-                  img/bed-large/black.png  1920w,
-                  img/bed-large/black.png   960w,
-                  img/bed-mobile/black.png  480w
+                  img/bed-mobile/black-2.png  1920w,
+                  img/bed-mobile/black-2.png   960w,
                 "
                 sizes="(min-width: 1920px) 500px,
-              (min-width: 800px) 500px,
-              480px"
-                src="img/bed-large/black.png"
+            (min-width: 800px) 500px,
+            480px"
+                src="img/bed-mobile/black-2.png"
                 alt="Black bed"
               />
-              <img
-              class="product-2"
-              srcset="
-                img/bed-mobile/black-2.png  1920w,
-                img/bed-mobile/black-2.png   960w,
-              "
-              sizes="(min-width: 1920px) 500px,
-          (min-width: 800px) 500px,
-          480px"
-              src="img/bed-mobile/black-2.png"
-              alt="Black bed"
-            />
-            </div>
+              </div>
+
+            </a>
+
 
             <h3>MALM</h3>
             <p>High bed frame/2 storage boxes, Queen</p>
