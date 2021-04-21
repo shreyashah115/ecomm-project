@@ -244,13 +244,6 @@
               </div>
             </div>
           </details>
-          <label for="sort">Sort by</label>
-          <select name="sort" id="sort">
-            <option value="best">Best match</option>
-            <option value="price-low">Price: low to high</option>
-            <option value="price-high">Price: high to low</option>
-            <option value="newest">Newest</option>
-          </select>
         </form>
 
         <div id="popup1" class="overlay">
@@ -407,7 +400,21 @@
       </header>
 
       <!-- Filtering product form -->
-      <h2 class="subheading">Results</h2>
+      <div class="results-container">
+        <h2 class="subheading">Results</h2>
+        <form class="sort">
+          <label for="sort">Sort by</label>
+          <select name="sort" id="sort">
+            <option value="best">Best match</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="newest">Newest</option>
+          </select>
+        </form>
+
+
+      </div>
+
       <section class="results">
         <!-- Product 1 -->
         <article class="product">
