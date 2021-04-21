@@ -6,10 +6,7 @@
 
 .color-buttons:active {
   transform: scale(0.98);
-  /* Scaling button to 0.98 to its original size */
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
-
 }
 
 .underline-link {
@@ -23,19 +20,19 @@
 }
 
 button.color-buttons.white {
-  border: 1px solid black;
-  background-color: white;
-  color: white;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  color: #ffffff;
 }
 
 button.color-buttons.black {
-  border: 1px solid black;
-  background-color: black;
-  color: black;
+  border: 1px solid #000000;
+  background-color: #000000;
+  color: #000000;
 }
 
 button.color-buttons.beige {
-  border: 1px solid black;
+  border: 1px solid #000000;
   background-color: rgb(240, 195, 111);
   color: rgb(240, 195, 111);
 }

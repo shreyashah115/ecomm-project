@@ -3,24 +3,27 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
 
 :root {
   --main-bg-color: #ffffff;
   --border-color: #cacaca;
   --popup-close: #333333;
-  --button-bg-color: rgb(124, 124, 226);
-  --cart-wishlist-button-color: rgb(101, 148, 235);
+  --button-bg-color: #7f187f;
+  --cart-wishlist-button-color: #7f187f;
   --fav-border: rgb(247 104 128);
-  --menu-hover-color: rgb(5, 60, 119);
+  --menu-hover-color: #ca3bca;
   --star-color: rgb(250, 6, 6);
-  --icon-color: rgb(53, 69, 86);
-  --button-hover: rgb(137, 171, 235);
-  --social-icons: rgb(237, 216, 81);
-
+  --icon-color: #ffffff;
+  --button-hover: #9b349b;
+  --social-icons: #7f187f;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
+h1 {
+  font-weight: 700;
+}
 
 .logo img {
   display: block;
@@ -41,9 +44,10 @@ span.material-icons-round.favorite_border::before {
   color: var(--fav-border);
   content: "favorite_border"
  }
+
  .total-ratings {
   font-size: 16px;
-  line-height: 23px;
+  line-height: 27px;
  }
 
 nav.pagination {
@@ -89,10 +93,12 @@ input[type=search] {
 }
 
 .legal {
+  display: flex;
   margin-top: 1em;
 }
 
 .legal > li {
+  margin-right: 1em;
 text-decoration: underline;
 }
 
@@ -237,7 +243,6 @@ span.icon.half {
   width: 10em;
   height: 2.5em;
   margin-right: 1em;
-  font-weight: 500;
   background-color:var(--cart-wishlist-button-color);
   color: var(--main-bg-color);
 }
@@ -250,14 +255,13 @@ span.icon.half {
 .add-wishlist {
   width: 10.5em;
   height: 2.5em;
-  font-weight: 500;
   background-color:var(--cart-wishlist-button-color);
   color: var(--main-bg-color);
 }
 
 .page-footer {
   margin: 0;
-  background-color: rgb(53, 69, 86);
+  background-color: rgb(212, 214, 216);
   padding: 1em;
 }
 
@@ -302,7 +306,7 @@ color:var(--icon-color);
 
 .menu {
   display: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .product-2 {
@@ -317,6 +321,10 @@ color:var(--icon-color);
   height: auto;
   left: 0;
   bottom: 0;
+}
+
+.social > li {
+  margin-right: 2em;
 }
 
 @media screen and (min-width: 70em) {
@@ -435,11 +443,6 @@ color:var(--icon-color);
   .social {
     justify-content: center;
   }
-  .social > li {
-    margin-right: 2em;
-  }
-  
-
 
   .heading {
     display: block;
