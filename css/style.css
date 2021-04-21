@@ -1,6 +1,10 @@
 /* Note there a few "reset" styles given in reset.css. Review those before you begin */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
 
 .logo img {
   display: block;
@@ -17,8 +21,20 @@
   cursor: pointer;
 }
 
-span.material-icons-round.favorite_border {
+span.material-icons-round.favorite_border::before {
   color:rgb(247 104 128);
+  content: "favorite_border"
+ }
+
+ /* span.material-icons-round.favorite_border:hover {
+  color:rgb(247 104 128);
+ } */
+
+
+
+ .total-ratings {
+  font-size: 16px;
+  line-height: 23px;
  }
 
 nav.pagination {
@@ -164,13 +180,14 @@ button[type=submit] {
 }
 
 .product {
+  position: relative;
   width: 100%;
   height: auto;
 }
 
 .image-container {
   width: 100%;
-  background-color: rgb(182, 182, 182);
+  /* background-color: rgb(255, 255, 255); */
 }
 
 .filters-large {
@@ -198,7 +215,8 @@ span.icon.half {
   height: 2.5em;
   margin-right: 1em;
   font-weight: 500;
-  color: rgb(101, 148, 235);
+  background-color:rgb(101, 148, 235);
+  color: white;
 }
 
 .product-footer {
@@ -207,10 +225,11 @@ span.icon.half {
 }
 
 .add-wishlist {
-  width: 10em;
+  width: 10.5em;
   height: 2.5em;
   font-weight: 500;
-  color: rgb(101, 148, 235);
+  background-color:rgb(101, 148, 235);
+  color: white;
 }
 
 .page-footer {
@@ -257,15 +276,41 @@ color:rgb(53, 69, 86);
 
 .menu {
   display: none;
+  font-weight: 600;
+}
+
+.product-2 {
+  position: absolute;
+  display: none;
+  -webkit-transition: opacity 5s ease-in-out;
+  -moz-transition: opacity 5s ease-in-out;
+  -ms-transition: opacity 5s ease-in-out;
+  -o-transition: opacity 5s ease-in-out;
+  transition: opacity 5s ease-in-out;
+  width: 100%;
+  height: auto;
+  left: 0;
+  bottom: 0;
 }
 
 @media screen and (min-width: 70em) {
+
+  .image-container:hover .product-2 {
+    display: inline;
+    object-fit: cover;
+  }
+
 
   .page-header {
     display: grid;
     grid-template-columns: auto 1fr auto;
   }
   
+  span.material-icons-round.favorite_border:hover::before {
+    color:rgb(247 104 128);
+    content: "favorite"
+   }
+
   .filters-large {
     display: block;
   }
@@ -350,8 +395,12 @@ color:rgb(53, 69, 86);
   }
   
   .image-container {
-    width: 99%;
+    position: relative;
+    width: 100%;
+    margin-top: 1.5em;
+    box-shadow: 0 2px 4px 0 rgba(173, 173, 173, 0.19), 0 2px 4px 0 rgba(173, 173, 173, 0.19);
   }
+  
   .social {
     justify-content: center;
   }
@@ -372,7 +421,7 @@ color:rgb(53, 69, 86);
 }
 
   .main-button:hover {
-    background-color: rgb(101, 148, 235);
+    background-color: rgb(137, 171, 235);
     color: white;
     box-shadow: inset 0 0 0 2em hsl(rgb(101, 148, 235), 45deg);
   }

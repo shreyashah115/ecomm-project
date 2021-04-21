@@ -3,7 +3,9 @@
 }
 html {
 	box-sizing: border-box;
-	font-family: 'Noto Sans JP', sans-serif;
+	/* font-family: 'Noto Sans JP', sans-serif;
+	 */
+	 font-family: 'Quicksand', sans-serif;
 }
 body {
 	margin: 0;
