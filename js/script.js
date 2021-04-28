@@ -132,7 +132,6 @@ const starBorder = `<span class="material-icons-round star-rate"> star_border </
 const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
 
 let section = document.querySelector("#results");
-console.log(section);
 section.innerHTML = ``;
 
 products.forEach((product) => {
@@ -140,7 +139,6 @@ products.forEach((product) => {
   // let stars = ``;
   let stars = [];
   let starCount = 0;
-  console.log(`index value, ${index}, product ${product.name}`);
 
   if (Number.isInteger(product.ratings)) {
     while (index < product.ratings) {
@@ -161,6 +159,8 @@ products.forEach((product) => {
     starLength++;
   }
 
+  let starString = stars.join(``);
+  // console.log(starString);
   const article = document.createElement(`article`);
   article.classList.add(`product`);
   article.innerHTML = `
@@ -199,7 +199,7 @@ products.forEach((product) => {
   <p>${product.description}</p>
   <data value="${product.amount}"><strong>$${product.amount}.00</strong></data>
   <div class="ratings">
-${stars}
+${starString}
 
     <span class="total-ratings">(${product.total_ratings} ratings)</span>
   </div>
