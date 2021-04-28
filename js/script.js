@@ -137,23 +137,29 @@ section.innerHTML = ``;
 
 products.forEach((product) => {
   let index = 0;
-  let stars = ``;
+  // let stars = ``;
+  let stars = [];
   let starCount = 0;
   console.log(`index value, ${index}, product ${product.name}`);
+
   if (Number.isInteger(product.ratings)) {
     while (index < product.ratings) {
-      stars += fullStar;
+      stars.push(fullStar);
       index++;
     }
   } else {
     while (index < Math.floor(product.ratings)) {
-      stars += fullStar;
+      stars.push(fullStar);
       index++;
     }
-    stars += halfStar;
+    stars.push(halfStar);
   }
+  let starLength = stars.length;
 
-  stars += starBorder;
+  while (starLength < 5) {
+    stars.push(starBorder);
+    starLength++;
+  }
 
   const article = document.createElement(`article`);
   article.classList.add(`product`);
