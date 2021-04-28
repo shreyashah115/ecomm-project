@@ -127,17 +127,14 @@ const products = [
   },
 ];
 
-// products.sort((firstItem, secondItem) => firstItem.amount - secondItem.amount);
-
 const fullStar = `<span class="material-icons-round star-rate"> star </span>`;
 const starBorder = `<span class="material-icons-round star-rate"> star_border </span>`;
 const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
 
 const getProducts = () => {
-  console.log("heree=----");
   let section = document.querySelector("#results");
   section.innerHTML = ``;
-
+  console.log(products);
   products.forEach((product) => {
     let index = 0;
     let stars = [];
@@ -234,6 +231,12 @@ sort.addEventListener("change", (event) => {
     products.sort(
       (firstItem, secondItem) => firstItem.amount - secondItem.amount
     );
+  } else if (selectedSortOption == `ratings`) {
+    products.sort(
+      (firstItem, secondItem) => secondItem.ratings - firstItem.ratings
+    );
+  } else {
+    getProducts();
   }
   getProducts();
 });
