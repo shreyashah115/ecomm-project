@@ -32,14 +32,14 @@ h1 {
 
 .splendid-sale {
   color: var(--main-bg-color);
-  font-size: 4em;
+  font-size: 2em;
   text-align: center;
   margin-block-end: 0;
 }
 
 .discount {
   color: var(--main-bg-color);
-  font-size: 3em;
+  font-size: 2em;
   margin-block-start: 0;
 }
 
@@ -59,24 +59,26 @@ h1 {
 .page-header {
   position: relative;
 }
+
 .banner {
+  margin-block-start: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
-background-position: bottom;
+  background-position: bottom;
   background-blend-mode: multiply;
   background-size: cover;
   background-color: #d4d4d4;
   height: 25em;
   padding: 1em;
-  background-image: url("../img/background/large.jpg");
+  background-image: url("../img/background/small.jpg");
 }
 
 .nav-toggle {
   position: absolute;
   right: 0;
   cursor: pointer;
-}
+} 
 
 span.material-icons-round.favorite_border::before {
   color: var(--fav-border);
@@ -106,6 +108,9 @@ span.material-icons-round.shopping-cart {
   color: var(--social-icons);
 }
 
+.search-container {
+  margin: 1em;
+}
 
 input[type=search] {
   border: 2px solid var(--border-color);
@@ -380,6 +385,32 @@ color:var(--icon-color);
     justify-content: space-between;
   }
 
+  .splendid-sale {
+    color: var(--main-bg-color);
+    font-size: 3em;
+    text-align: center;
+    margin-block-end: 0;
+  }
+  
+  .discount {
+    color: var(--main-bg-color);
+    font-size: 3em;
+    margin-block-start: 0;
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: bottom;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-color: #d4d4d4;
+    height: 25em;
+    padding: 1em;
+    background-image: url("../img/background/medium.jpg");
+  }
+
 .shop-now:hover {
   color: white;
   background-color:black;
@@ -391,10 +422,10 @@ color:var(--icon-color);
   position: unset;
 }
 
-  body {
-    width: 74em;
-    margin: 0 auto;
-  }
+.page-header, .products, .page-footer {
+  width: 74em;
+  margin: 0 auto;
+}
 
   .image-container:hover .product-2 {
     display: inline;
@@ -559,7 +590,11 @@ color:var(--icon-color);
 
 @media screen and (min-width: 90em) {
 
-  body {
+  .banner {
+    background-image: url("../img/background/large.jpg");
+  }
+
+  .page-header, .products, .page-footer {
     width: 90em;
     margin: 0 auto;
   }
