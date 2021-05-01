@@ -60,6 +60,20 @@ h1 {
   position: relative;
 }
 
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content a {
+  color: var(--cart-wishlist-button-color);
+  font-size: 0.8em;
+  padding: 0.2em 0.4em;
+  text-decoration: none;
+  display: block;
+}
+
 .banner {
   margin-block-start: 1em;
   display: flex;
@@ -135,6 +149,25 @@ span.material-icons-round.favorite_border, span.material-icons-round.shopping-ca
   font-size: 30px;
 }
 
+
+.close-icon {
+  display: none;
+}
+
+.toggle-menu {
+  position: fixed;
+  z-index: 100;
+  top: 3em;
+  right: 1em;
+  background: white;
+  color: #7f187f;
+  cursor: pointer;
+}
+
+span.menu-icon.material-icons-round, span.close-icon.material-icons-round {
+  color: var(--button-bg-color);
+}
+
 .footer-nav {
   display: flex;
   flex-direction: column;
@@ -191,13 +224,14 @@ select#sort {
   padding: 0.1em;
   width: 7em;
   height: 3em;
-  text-align: right;
   font-size: 1em;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  transition: all 0.2s;
   margin-top: 1.5em;
   border: 1px solid var(--border-color);
   border-radius: 2em;
   background-color:  var(--main-bg-color);
-  font-weight: 700;
+  font-weight: 500;
   justify-content: space-evenly;
   text-align: center;
   text-decoration: none;
@@ -357,7 +391,17 @@ color:var(--icon-color);
 
 .menu {
   display: none;
+  position: fixed;
+  right: 0;
+  width: 15em;
+  height: 12em;
+  top: 2em;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  color: white;
+  padding: 1rem;
   font-weight: 700;
+  z-index: 2;
 }
 
 .product-2 {
@@ -450,23 +494,26 @@ color:var(--icon-color);
     display: block;
   }
   
-  .nav-toggle {
-    display: none;
-  }
-
   input[type=search] {
     width: 136%;
     font-size: 90%;
     margin-top: 1em;
 }
-  
-  
+    
+  .toggle-menu {
+    display: none;
+  }
+
   .menu {
     display: flex;
     font-size: 1.3em;
     flex-direction: row;
     color: black;
     text-decoration: none;
+    position: unset;
+    width: 100%;
+    background-color: var(--main-bg-color);
+    box-shadow: none;
   }
 
 
@@ -545,21 +592,21 @@ color:var(--icon-color);
     list-style-type: none;
   }
 
-.main-button {
-  transition: 0.25s;
-}
+  .main-button {
+    transition: 0.25s;
+  }
 
   .main-button:hover {
     background-color: var(--button-hover);
     color:  var(--main-bg-color);
     box-shadow: inset 0 0 0 2em hsl(var(--cart-wishlist-button-color), 45deg);
   }
-  
-  
+
 .dropdown {
     position: relative;
     display: inline-block;
   }
+
   .dropdown-content {
     display: none;
     position: absolute;

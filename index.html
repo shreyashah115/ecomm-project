@@ -31,8 +31,12 @@
       </a>
       <!-- Navigation menu and toggle button (non-functional) -->
       <nav aria-label="Primary" class="navigation">
-        <span class="material-icons-round nav-toggle">menu</span>
-        <ul class="menu">
+        <button class="toggle-menu" id="toggle-menu">
+          <span class="menu-icon material-icons-round">menu</span>
+          <span class="close-icon material-icons-round">close</span>
+        </button>
+
+        <ul class="menu" id="menu">
           <li class="dropdown">
             <a class="menu-links" href="#">Products</a>
             <div class="dropdown-content">

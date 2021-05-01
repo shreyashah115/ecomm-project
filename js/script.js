@@ -240,3 +240,23 @@ sort.addEventListener("change", (event) => {
   }
   getProducts();
 });
+
+let navToggle = document.querySelector(`#toggle-menu`);
+let menu = document.querySelector(".menu");
+let xIcon = document.querySelector(".close-icon");
+let menuIcon = document.querySelector(".menu-icon");
+
+navToggle.addEventListener("click", (event) => {
+  // console.log(event.target);
+  let menu = document.getElementById(`menu`);
+
+  if (!menu.style.display || menu.style.display === `none`) {
+    menu.style.display = "block";
+    xIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  } else {
+    menu.style.display = "none";
+    xIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  }
+});
