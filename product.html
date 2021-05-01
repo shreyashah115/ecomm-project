@@ -50,29 +50,25 @@
       </nav>
 
       <!-- Search for a product (non-functional) -->
-      <div class="container">
+      <div class="search-container">
         <form class="search">
           <label>
-            <input
-              type="search"
-              name="find"
-              id="find"
-              placeholder="What would you like to search for?"
-            />
+            <input type="search" name="find" id="find" placeholder="Search" />
           </label>
         </form>
-        <div class="additional-links">
-          <a href="#">
-            <span class="material-icons-round favorite_border"> </span>
-          </a>
-
-          <a href="#">
-            <span class="material-icons-round"> shopping_cart </span>
-          </a>
-        </div>
+      </div>
+      <div class="additional-links">
+        <a href="#">
+          <span class="material-icons-round favorite_border"> </span>
+        </a>
+        <a href="#">
+          <span class="material-icons-round shopping-cart">
+            shopping_cart
+          </span>
+        </a>
       </div>
     </header>
-
+    <hr />
     <main class="products">
       <!-- Filtering product form -->
       <h2 class="subheading">Product details</h2>
@@ -217,7 +213,7 @@
         >See all questions and answers &#8594;</a
       >
     </aside>
-
+    <hr />
     <footer class="page-footer">
       <nav aria-label="Legal" class="footer-nav">
         <button type="button" class="main-button mobile-app">

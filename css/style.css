@@ -26,8 +26,50 @@ h1 {
   margin: 1em;
 }
 
+.splendid-sale, .discount, .shop-now {
+  text-transform: uppercase;
+}
+
+.splendid-sale {
+  color: var(--main-bg-color);
+  font-size: 4em;
+  text-align: center;
+  margin-block-end: 0;
+}
+
+.discount {
+  color: var(--main-bg-color);
+  font-size: 3em;
+  margin-block-start: 0;
+}
+
+.shop-now {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 auto;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.2s;
+}
+
 .page-header {
   position: relative;
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+background-position: bottom;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-color: #d4d4d4;
+  height: 25em;
+  padding: 1em;
+  background-image: url("../img/background/large.jpg");
 }
 
 .nav-toggle {
@@ -265,7 +307,7 @@ span.icon.half {
 
 .page-footer {
   margin: 0;
-  background-color: rgb(212, 214, 216);
+  /* background-color: rgb(212, 214, 216); */
   padding: 1em;
 }
 
@@ -301,7 +343,7 @@ span.material-icons-round.star-rate {
  }
 
 .copyright, .legal li a{
-  color:  var(--main-bg-color);
+  color:  var(--popup-close);
 }
 
 .material-icons-round {
@@ -337,6 +379,11 @@ color:var(--icon-color);
     display: flex;
     justify-content: space-between;
   }
+
+.shop-now:hover {
+  color: white;
+  background-color:black;
+}
 
 
 .additional-links {

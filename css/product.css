@@ -43,6 +43,10 @@ button.color-buttons.beige {
     grid-template-columns: 1fr 1fr;
   }
   
+  span.material-icons-round.nav-toggle{
+    display: none;
+  }
+
   .product-details {
     padding-left: 10em;
   }
