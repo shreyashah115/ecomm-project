@@ -74,7 +74,7 @@ const products = [
     description: `Metal frame bed, Twin`,
     amount: 98,
     ratings: 1,
-    total_ratings: `1`,
+    total_ratings: `3`,
     images: [
       `img/bed-large/metal-2.png`,
       `img/bed-mobile/metal-2.png`,
