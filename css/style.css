@@ -422,7 +422,7 @@ color:var(--icon-color);
   position: unset;
 }
 
-.page-header, .products, .page-footer {
+ .products, .page-footer {
   width: 74em;
   margin: 0 auto;
 }
@@ -594,14 +594,14 @@ color:var(--icon-color);
     background-image: url("../img/background/large.jpg");
   }
 
-  .page-header, .products, .page-footer {
+ .products, .page-footer {
     width: 90em;
     margin: 0 auto;
   }
 
   .page-header {
     display: grid;
-    grid-template-columns: auto 0.8fr 0.3fr auto;
+    grid-template-columns: auto 1fr auto auto;
 }
 
   input[type=search] {
