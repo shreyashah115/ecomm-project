@@ -139,20 +139,29 @@
                 <h4>Type</h4>
                 <ol class="filter-list-large">
                   <li>
-                    <input type="checkbox" name="size" value="xs" id="xs" />
-                    <label for="storage">Beds with Storage</label>
+                    <label class="custom-check">
+                      <input type="checkbox" />
+                      <span>Beds with Storage</span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label class="custom-check">
+                      <input type="checkbox" name="type" value="twin" />
+                      <span>Twin Beds</span>
+                    </label>
                   </li>
                   <li>
-                    <input type="checkbox" name="size" value="sm" id="sm" />
-                    <label for="twin">Twin Beds</label>
+                    <label class="custom-check">
+                      <input type="checkbox" name="type" value="full" />
+                      <span>Full Beds</span>
+                    </label>
                   </li>
                   <li>
-                    <input type="checkbox" name="size" value="md" id="md" />
-                    <label for="full">Full Beds</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" name="size" value="lg" id="lg" />
-                    <label for="kids">Kids Beds</label>
+                    <label class="custom-check">
+                      <input type="checkbox" name="type" value="kids" />
+                      <span>Kids Beds</span>
+                    </label>
                   </li>
                 </ol>
               </div>
@@ -160,58 +169,38 @@
                 <h4>Color</h4>
                 <ul class="filter-list-large">
                   <li>
-                    <input
-                      type="checkbox"
-                      name="colour"
-                      value="black"
-                      id="black"
-                    />
-                    <label for="black">Black</label>
+                    <label class="custom-check">
+                      <input type="checkbox" name="colour" value="black" />
+                      <span>Black</span>
+                    </label>
                   </li>
                   <li>
-                    <input
-                      type="checkbox"
-                      name="colour"
-                      value="white"
-                      id="white"
-                    />
-                    <label for="white">White</label>
+                    <label class="custom-check">
+                      <input type="checkbox" name="colour" value="white" />
+                      <span>White</span>
+                    </label>
                   </li>
                   <li>
-                    <input
-                      type="checkbox"
-                      name="colour"
-                      value="grey"
-                      id="grey"
-                    />
-                    <label for="grey">Grey</label>
+                    <label class="custom-check">
+                      <input type="checkbox" name="colour" value="grey" />
+                      <span>Grey</span>
+                    </label>
                   </li>
                   <li>
-                    <input type="checkbox" name="colour" value="red" id="red" />
-                    <label for="red">Red</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="colour"
-                      value="blue"
-                      id="blue"
-                    />
-                    <label for="blue">Blue</label>
+                    <label class="custom-check">
+                      <input type="checkbox" name="colour" value="beige" />
+                      <span>Beige</span>
+                    </label>
                   </li>
                 </ul>
               </div>
               <div class="ratings-bar">
                 <h4>Ratings (above)</h4>
-                <ol class="filter-list-large">
+                <ol>
                   <li>
-                    <input
-                      type="radio"
-                      name="rating"
-                      value="4"
-                      id="aboveFour"
-                    />
-                    <label for="aboveFour">
+                    <label class="custom-radio">
+                      <input type="radio" name="rating" value="4" />
+
                       <span class="material-icons-round star-rate"> star </span>
                       <span class="material-icons-round star-rate"> star </span>
                       <span class="material-icons-round star-rate"> star </span>
@@ -219,28 +208,25 @@
                     </label>
                   </li>
                   <li>
-                    <input
-                      type="radio"
-                      name="rating"
-                      value="3"
-                      id="aboveThree"
-                    />
-                    <label for="aboveThree">
+                    <label class="custom-radio">
+                      <input type="radio" name="rating" value="3" />
                       <span class="material-icons-round star-rate"> star </span>
                       <span class="material-icons-round star-rate"> star </span>
                       <span class="material-icons-round star-rate"> star </span>
                     </label>
                   </li>
+
                   <li>
-                    <input type="radio" name="rating" value="2" id="aboveTwo" />
-                    <label for="aboveTwo">
+                    <label class="custom-radio">
+                      <input type="radio" name="rating" value="2" />
                       <span class="material-icons-round star-rate"> star </span>
                       <span class="material-icons-round star-rate"> star </span>
                     </label>
                   </li>
+
                   <li>
-                    <input type="radio" name="rating" value="1" id="aboveOne" />
-                    <label for="aboveOne">
+                    <label class="custom-radio">
+                      <input type="radio" name="rating" value="1" />
                       <span class="material-icons-round star-rate"> star </span>
                     </label>
                   </li>
@@ -264,84 +250,67 @@
                     <legend>Type</legend>
                     <ol class="filter-list">
                       <li>
-                        <input type="checkbox" name="size" value="xs" id="xs" />
-                        <label for="storage">Beds with Storage</label>
+                        <label class="custom-check">
+                          <input type="checkbox" />
+                          <span>Beds with Storage</span>
+                        </label>
+                      </li>
+
+                      <li>
+                        <label class="custom-check">
+                          <input type="checkbox" name="type" value="twin" />
+                          <span>Twin Beds</span>
+                        </label>
                       </li>
                       <li>
-                        <input type="checkbox" name="size" value="sm" id="sm" />
-                        <label for="twin">Twin Beds</label>
+                        <label class="custom-check">
+                          <input type="checkbox" name="type" value="full" />
+                          <span>Full Beds</span>
+                        </label>
                       </li>
                       <li>
-                        <input type="checkbox" name="size" value="md" id="md" />
-                        <label for="full">Full Beds</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" name="size" value="lg" id="lg" />
-                        <label for="kids">Kids Beds</label>
+                        <label class="custom-check">
+                          <input type="checkbox" name="type" value="kids" />
+                          <span>Kids Beds</span>
+                        </label>
                       </li>
                     </ol>
                   </fieldset>
                   <fieldset>
-                    <legend>Colour</legend>
+                    <legend>Color</legend>
                     <ul class="filter-list">
                       <li>
-                        <input
-                          type="checkbox"
-                          name="colour"
-                          value="black"
-                          id="black"
-                        />
-                        <label for="black">Black</label>
+                        <label class="custom-check">
+                          <input type="checkbox" name="colour" value="black" />
+                          <span>Black</span>
+                        </label>
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          name="colour"
-                          value="white"
-                          id="white"
-                        />
-                        <label for="white">White</label>
+                        <label class="custom-check">
+                          <input type="checkbox" name="colour" value="white" />
+                          <span>White</span>
+                        </label>
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          name="colour"
-                          value="grey"
-                          id="grey"
-                        />
-                        <label for="grey">Grey</label>
+                        <label class="custom-check">
+                          <input type="checkbox" name="colour" value="grey" />
+                          <span>Grey</span>
+                        </label>
                       </li>
                       <li>
-                        <input
-                          type="checkbox"
-                          name="colour"
-                          value="red"
-                          id="red"
-                        />
-                        <label for="red">Red</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          name="colour"
-                          value="blue"
-                          id="blue"
-                        />
-                        <label for="blue">Blue</label>
+                        <label class="custom-check">
+                          <input type="checkbox" name="colour" value="beige" />
+                          <span>Beige</span>
+                        </label>
                       </li>
                     </ul>
                   </fieldset>
                   <fieldset>
                     <legend>Ratings (above)</legend>
-                    <ol class="filter-list">
+                    <ol>
                       <li>
-                        <input
-                          type="radio"
-                          name="rating"
-                          value="4"
-                          id="aboveFour"
-                        />
-                        <label for="aboveFour">
+                        <label class="custom-radio">
+                          <input type="radio" name="rating" value="4" />
                           <span class="material-icons-round star-rate">
                             star
                           </span>
@@ -357,13 +326,8 @@
                         </label>
                       </li>
                       <li>
-                        <input
-                          type="radio"
-                          name="rating"
-                          value="3"
-                          id="aboveThree"
-                        />
-                        <label for="aboveThree">
+                        <label class="custom-radio">
+                          <input type="radio" name="rating" value="3" />
                           <span class="material-icons-round star-rate">
                             star
                           </span>
@@ -375,33 +339,25 @@
                           </span>
                         </label>
                       </li>
+
                       <li>
-                        <input
-                          type="radio"
-                          name="rating"
-                          value="2"
-                          id="aboveTwo"
-                        />
-                        <label for="aboveTwo">
+                        <label class="custom-radio">
+                          <input type="radio" name="rating" value="2" />
                           <span class="material-icons-round star-rate">
-                            star</span
-                          >
+                            star
+                          </span>
                           <span class="material-icons-round star-rate">
-                            star</span
-                          >
+                            star
+                          </span>
                         </label>
                       </li>
+
                       <li>
-                        <input
-                          type="radio"
-                          name="rating"
-                          value="1"
-                          id="aboveOne"
-                        />
-                        <label for="aboveOne">
+                        <label class="custom-radio">
+                          <input type="radio" name="rating" value="1" />
                           <span class="material-icons-round star-rate">
-                            star</span
-                          >
+                            star
+                          </span>
                         </label>
                       </li>
                     </ol>

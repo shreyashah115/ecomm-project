@@ -33,8 +33,12 @@
       </a>
       <!-- Navigation menu and toggle button (non-functional) -->
       <nav aria-label="Primary" class="navigation">
-        <span class="material-icons-round nav-toggle">menu</span>
-        <ul class="menu">
+        <button class="toggle-menu" id="toggle-menu">
+          <span class="menu-icon material-icons-round">menu</span>
+          <span class="close-icon material-icons-round">close</span>
+        </button>
+
+        <ul class="menu" id="menu">
           <li class="dropdown">
             <a class="menu-links" href="#">Products</a>
             <div class="dropdown-content">
@@ -76,59 +80,64 @@
         <!-- Product 1 -->
         <article class="product">
           <header class="product-header">
-            <div class="product-images">
-              <img
-                class="product"
-                srcset="
-                  img/bed-large/black.png  1920w,
-                  img/bed-large/black.png   960w,
-                  img/bed-mobile/black.png  480w
-                "
-                sizes="(min-width: 1920px) 500px,
-            (min-width: 800px) 500px,
-            480px"
-                src="img/bed-large/black.png"
-                alt="Black bed"
-              />
-              <img
-                class="product"
-                srcset="
-                  img/product/image-1.png 1920w,
-                  img/product/image-1.png  960w,
-                  img/product/image-1.png  480w
-                "
-                sizes="(min-width: 1920px) 500px,
-          (min-width: 800px) 500px,
-          480px"
-                src="img/product/image-1.png"
-                alt="Black bed"
-              />
-              <img
-                class="product"
-                srcset="
-                  img/product/image-2.png 1920w,
-                  img/product/image-2.png  960w,
-                  img/product/image-2.png  480w
-                "
-                sizes="(min-width: 1920px) 500px,
-        (min-width: 800px) 500px,
-        480px"
-                src="img/product/image-2.png"
-                alt="Black bed"
-              />
-              <img
-                class="product"
-                srcset="
-                  img/product/image-3.png 1920w,
-                  img/product/image-3.png  960w,
-                  img/product/image-3.png  480w
-                "
-                sizes="(min-width: 1920px) 500px,
-      (min-width: 800px) 500px,
-      480px"
-                src="img/product/image-3.png"
-                alt="Black bed"
-              />
+            <div class="container">
+              <div class="mySlides">
+                <div class="numbertext">1 / 4</div>
+                <img class="gallery" src="img/bed-mobile/black.png" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">2 / 4</div>
+                <img class="gallery" src="img/bed-large/grey-2.png" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">3 / 4</div>
+                <img class="gallery" src="img/product/image-2.png" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">4 / 4</div>
+                <img class="gallery" src="img/product/image-3.png" />
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+
+              <div class="row">
+                <div class="column">
+                  <img
+                    class="gallery img-bg cursor"
+                    src="img/bed-mobile/black.png"
+                    onclick="currentSlide(1)"
+                    alt="Black bed"
+                  />
+                </div>
+                <div class="column">
+                  <img
+                    class="gallery img-bg cursor"
+                    src="img/bed-mobile/grey-2.png"
+                    onclick="currentSlide(2)"
+                    alt="Grey bed in room"
+                  />
+                </div>
+                <div class="column">
+                  <img
+                    class="gallery img-bg cursor"
+                    src="img/product/image-2.png"
+                    onclick="currentSlide(3)"
+                    alt="Black bed close up"
+                  />
+                </div>
+                <div class="column">
+                  <img
+                    class="gallery img-bg cursor"
+                    src="img/product/image-3.png"
+                    onclick="currentSlide(4)"
+                    alt="Bed with mattress"
+                  />
+                </div>
+              </div>
             </div>
             <div class="product-details">
               <h3>MALM</h3>
@@ -238,5 +247,6 @@
         <p class="copyright">Copyright © Siesta - 2021</p>
       </nav>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>

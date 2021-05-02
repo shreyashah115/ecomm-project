@@ -133,6 +133,9 @@ const halfStar = `<span class="material-icons-round star-rate"> star_half </span
 
 const getProducts = () => {
   let section = document.querySelector("#results");
+  if (!section) {
+    return;
+  }
   section.innerHTML = ``;
   console.log(products);
   products.forEach((product) => {
@@ -217,36 +220,42 @@ const getProducts = () => {
   });
 };
 
-getProducts();
-
-let sort = document.querySelector(`#sort`);
-
-sort.addEventListener("change", (event) => {
-  let selectedSortOption = event.target.value;
-  if (selectedSortOption == `high`) {
-    products.sort(
-      (firstItem, secondItem) => secondItem.amount - firstItem.amount
-    );
-  } else if (selectedSortOption == `low`) {
-    products.sort(
-      (firstItem, secondItem) => firstItem.amount - secondItem.amount
-    );
-  } else if (selectedSortOption == `ratings`) {
-    products.sort(
-      (firstItem, secondItem) => secondItem.ratings - firstItem.ratings
-    );
-  } else {
-    getProducts();
+const sortProducts = () => {
+  let sort = document.querySelector(`#sort`);
+  if (!sort) {
+    return;
   }
-  getProducts();
-});
+  sort.addEventListener("change", (event) => {
+    let selectedSortOption = event.target.value;
+    if (selectedSortOption == `high`) {
+      products.sort(
+        (firstItem, secondItem) => secondItem.amount - firstItem.amount
+      );
+    } else if (selectedSortOption == `low`) {
+      products.sort(
+        (firstItem, secondItem) => firstItem.amount - secondItem.amount
+      );
+    } else if (selectedSortOption == `ratings`) {
+      products.sort(
+        (firstItem, secondItem) => secondItem.ratings - firstItem.ratings
+      );
+    } else {
+      getProducts();
+    }
+    getProducts();
+  });
+};
+
+getProducts();
+sortProducts();
 
 let navToggle = document.querySelector(`#toggle-menu`);
 let menu = document.querySelector(`.menu`);
 let closeIcon = document.querySelector(`.close-icon`);
 let menuIcon = document.querySelector(`.menu-icon`);
-
+console.log("nav toggle", navToggle);
 navToggle.addEventListener(`click`, (event) => {
+  console.log("here");
   let menu = document.getElementById(`menu`);
 
   if (!menu.style.display || menu.style.display === `none`) {
@@ -259,3 +268,46 @@ navToggle.addEventListener(`click`, (event) => {
     menuIcon.style.display = `block`;
   }
 });
+
+let mainImage = document.querySelector(`.main-image`);
+let galleryImages = document.querySelector(`.gallery`);
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
