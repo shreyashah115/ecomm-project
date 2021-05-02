@@ -483,6 +483,14 @@ color:var(--icon-color);
 }
 
 
+@media screen and (min-width: 40em) {
+  .products, .page-footer {
+    width: 35em;
+    margin: 0 auto;
+  }
+
+}
+
 @media screen and (min-width: 70em) {
 
   .results-container {
