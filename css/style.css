@@ -43,11 +43,12 @@ h1 {
   font-weight: 700;
 }
 
-
 .logo img {
   display: block;
   margin: 1em;
+  width: auto;
 }
+
 
 .splendid-sale, .discount, .shop-now {
   text-transform: uppercase;

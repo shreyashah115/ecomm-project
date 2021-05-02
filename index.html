@@ -25,7 +25,20 @@
   <body>
     <header class="page-header">
       <a href="index.html" class="logo">
-        <img src="img/siesta-mobile.png" alt="logo" />
+        <!-- <img src="img/siesta-mobile.png" alt="logo" /> -->
+        <img
+          class="product"
+          srcset="
+            img/siestaa.png       1920w,
+            img/siestaa.png        960w,
+            img/siesta-mobile.png  480w
+          "
+          sizes="(min-width: 1920px) 500px,
+      (min-width: 800px) 500px,
+      480px"
+          src="img/siesta-mobile.png"
+          alt="Siesta logo"
+        />
       </a>
       <!-- Navigation menu and toggle button (non-functional) -->
       <nav aria-label="Primary" class="navigation">
