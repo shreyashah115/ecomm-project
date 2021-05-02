@@ -77,7 +77,7 @@ const products = [
     total_ratings: `3`,
     images: [
       `img/bed-large/metal-2.png`,
-      `img/bed-mobile/metal-2.png`,
+      `img/bed-large/metal-2.png`,
       `img/bed-large/twin-metal.png`,
       `img/bed-mobile/twin-metal.png`,
     ],
@@ -253,9 +253,8 @@ let navToggle = document.querySelector(`#toggle-menu`);
 let menu = document.querySelector(`.menu`);
 let closeIcon = document.querySelector(`.close-icon`);
 let menuIcon = document.querySelector(`.menu-icon`);
-console.log("nav toggle", navToggle);
+
 navToggle.addEventListener(`click`, (event) => {
-  console.log("here");
   let menu = document.getElementById(`menu`);
 
   if (!menu.style.display || menu.style.display === `none`) {
@@ -269,45 +268,35 @@ navToggle.addEventListener(`click`, (event) => {
   }
 });
 
-let mainImage = document.querySelector(`.main-image`);
-let galleryImages = document.querySelector(`.gallery`);
+const showSlides = (n) => {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (slides.length === 0) return;
 
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  let dots = document.getElementsByClassName("img-bg");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+};
 
-var slideIndex = 1;
+slideIndex = 1;
 showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+const plusSlides = (n) => {
+  showSlides((slideIndex += n));
+};
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+const currentSlide = (n) => {
+  showSlides((slideIndex = n));
+};
