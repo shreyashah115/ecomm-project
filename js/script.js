@@ -213,6 +213,12 @@ const getProducts = (products) => {
   }
   section.innerHTML = ``;
 
+  if (products.length == 0) {
+    section.innerHTML = `<h1>Sorry, no products found.</h1>`;
+    let pagination = document.querySelector(".pagination");
+    pagination.style = "display:none";
+  }
+
   products.forEach((product) => {
     let index = 0;
     let stars = [];
