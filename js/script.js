@@ -4,6 +4,8 @@ const products = [
     description: `High bed frame/2 storage boxes, Queen`,
     amount: 356,
     ratings: 4.5,
+    type: `storage`,
+    color: `black`,
     total_ratings: `26`,
     images: [
       `img/bed-large/black.webp`,
@@ -18,6 +20,8 @@ const products = [
     description: `Bed frame, Queen`,
     amount: 578,
     ratings: 5,
+    type: `storage`,
+    color: `white`,
     total_ratings: `81`,
     images: [
       `img/bed-large/white.webp`,
@@ -32,6 +36,8 @@ const products = [
     description: `Upholstered bed frame, Queen`,
     amount: 159,
     ratings: 2,
+    type: `full`,
+    color: `grey`,
     total_ratings: `6`,
     images: [
       `img/bed-large/grey.webp`,
@@ -46,6 +52,8 @@ const products = [
     description: `Bed frame, Full`,
     amount: 492,
     ratings: 4,
+    type: `full`,
+    color: `beige`,
     total_ratings: `47`,
     images: [
       `img/bed-large/beige.webp`,
@@ -60,6 +68,8 @@ const products = [
     description: `High bed, Twin`,
     amount: 156,
     ratings: 3.5,
+    type: `twin`,
+    color: `white`,
     total_ratings: `9`,
     images: [
       `img/bed-large/twin-white-2.webp`,
@@ -74,6 +84,8 @@ const products = [
     description: `Metal frame bed, Twin`,
     amount: 98,
     ratings: 1,
+    type: `twin`,
+    color: `black`,
     total_ratings: `3`,
     images: [
       `img/bed-large/metal-2.webp`,
@@ -88,6 +100,8 @@ const products = [
     description: `Low Profile Platform Bed, Twin`,
     amount: 234,
     ratings: 5,
+    type: `twin`,
+    color: `black`,
     total_ratings: `89`,
     images: [
       `img/bed-large/blue-twin.webp`,
@@ -102,6 +116,8 @@ const products = [
     description: `Full bunk bed`,
     amount: 657,
     ratings: 3,
+    type: `kids`,
+    color: `grey`,
     total_ratings: `23`,
     images: [
       `img/bed-large/kids-2.webp`,
@@ -116,6 +132,8 @@ const products = [
     description: `Twin over full bunk bed`,
     amount: 356,
     ratings: 4,
+    type: `kids`,
+    color: `white`,
     total_ratings: `12`,
     images: [
       `img/bed-large/kids-white.webp`,
@@ -127,17 +145,74 @@ const products = [
   },
 ];
 
+const allFilters = {
+  type: [],
+  color: [],
+  ratings: 0,
+};
+
+const filterProducts = function () {
+  let filteredArray = products;
+
+  if (allFilters.type.length > 0) {
+    filteredArray = products.filter(function (product) {
+      return allFilters.type.join().includes(product.type);
+    });
+  }
+
+  if (allFilters.color.length > 0) {
+    filteredArray = filteredArray.filter(function (product) {
+      return allFilters.color.join().includes(product.color);
+    });
+  }
+
+  if (allFilters.ratings > 0) {
+    filteredArray = filteredArray.filter(function (product) {
+      return product.ratings >= allFilters.ratings;
+    });
+  }
+
+  getProducts(filteredArray);
+};
+
+let filters = document.querySelector(`.filter-options-large`);
+filters.addEventListener(`input`, function (event) {
+  let filterName = event.target.name;
+  let filterValue = event.target.value;
+  let checked = event.target.checked;
+
+  if (filterName === `type`) {
+    if (checked) {
+      allFilters.type.push(filterValue);
+    } else {
+      allFilters.type.pop(filterValue);
+    }
+  } else if (filterName === `color`) {
+    if (checked) {
+      allFilters.color.push(filterValue);
+    } else {
+      allFilters.color.pop(filterValue);
+    }
+  } else if (filterName === `rating`) {
+    if (!event.target.disabled) {
+      allFilters.ratings = Number(filterValue);
+    }
+  }
+
+  filterProducts();
+});
+
 const fullStar = `<span class="material-icons-round star-rate"> star </span>`;
 const starBorder = `<span class="material-icons-round star-rate"> star_border </span>`;
 const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
 
-const getProducts = () => {
+const getProducts = (products) => {
   let section = document.querySelector("#results");
   if (!section) {
     return;
   }
   section.innerHTML = ``;
-  console.log(products);
+
   products.forEach((product) => {
     let index = 0;
     let stars = [];
@@ -240,13 +315,13 @@ const sortProducts = () => {
         (firstItem, secondItem) => secondItem.ratings - firstItem.ratings
       );
     } else {
-      getProducts();
+      getProducts(products);
     }
-    getProducts();
+    getProducts(products);
   });
 };
 
-getProducts();
+getProducts(products);
 sortProducts();
 
 let navToggle = document.querySelector(`#toggle-menu`);
