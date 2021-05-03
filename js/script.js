@@ -151,7 +151,7 @@ const allFilters = {
   ratings: 0,
 };
 
-const filterProducts = function () {
+const filterProducts = (products) => {
   let filteredArray = products;
 
   if (allFilters.type.length > 0) {
@@ -199,12 +199,21 @@ filters.addEventListener(`input`, function (event) {
     }
   }
 
-  filterProducts();
+  filterProducts(products);
 });
 
 const fullStar = `<span class="material-icons-round star-rate"> star </span>`;
 const starBorder = `<span class="material-icons-round star-rate"> star_border </span>`;
 const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
+
+// const see = (e) => {
+//   var x = document.forms["filters-2"];
+//   console.log(x);
+//   console.log("ehrheh");
+//   document.querySelector(`div#popup1`).style.display = `none`;
+//   // document.querySelector(`.popup`).style.display = `none`;
+//   // console.log(document.querySelector(`.overlay`));
+// };
 
 const getProducts = (products) => {
   let section = document.querySelector("#results");
@@ -323,7 +332,7 @@ const sortProducts = () => {
     } else {
       getProducts(products);
     }
-    getProducts(products);
+    filterProducts(products);
   });
 };
 
