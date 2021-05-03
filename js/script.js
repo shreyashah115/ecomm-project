@@ -206,14 +206,21 @@ const fullStar = `<span class="material-icons-round star-rate"> star </span>`;
 const starBorder = `<span class="material-icons-round star-rate"> star_border </span>`;
 const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
 
-// const see = (e) => {
-//   var x = document.forms["filters-2"];
-//   console.log(x);
-//   console.log("ehrheh");
-//   document.querySelector(`div#popup1`).style.display = `none`;
-//   // document.querySelector(`.popup`).style.display = `none`;
-//   // console.log(document.querySelector(`.overlay`));
-// };
+let filterButton = document.querySelector(`a.main-button.dialog`);
+
+filterButton.addEventListener(`click`, (event) => {
+  let overlay = document.querySelector(`.overlay`);
+  overlay.style.visibility = "visible";
+  overlay.style.opacity = 1;
+});
+
+let closeButton = document.querySelector(`a.close`);
+
+closeButton.addEventListener(`click`, (event) => {
+  let overlay = document.querySelector(`.overlay`);
+  overlay.style.visibility = "hidden";
+  overlay.style.opacity = 0;
+});
 
 const getProducts = (products) => {
   let section = document.querySelector("#results");

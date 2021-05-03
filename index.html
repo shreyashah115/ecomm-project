@@ -79,7 +79,7 @@
     <main class="products">
       <header class="heading">
         <h1>Products</h1>
-        <a href="#popup1" class="main-button dialog">
+        <a href="#" class="main-button dialog">
           <svg
             class="filters-icon"
             viewBox="0 0 32 32"
@@ -243,125 +243,123 @@
             </h2>
 
             <div class="content">
-              <form class="filters-2" onsubmit="see()">
-                <div class="filter-options">
-                  <fieldset>
-                    <legend>Type</legend>
-                    <ol class="filter-list">
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" />
-                          <span>Beds with Storage</span>
-                        </label>
-                      </li>
+              <form name="filters" class="filters-2">
+                <fieldset>
+                  <legend>Type</legend>
+                  <ol class="filter-list">
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="type" value="storage" />
+                        <span>Beds with Storage</span>
+                      </label>
+                    </li>
 
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" name="type" value="twin" />
-                          <span>Twin Beds</span>
-                        </label>
-                      </li>
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" name="type" value="full" />
-                          <span>Full Beds</span>
-                        </label>
-                      </li>
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" name="type" value="kids" />
-                          <span>Kids Beds</span>
-                        </label>
-                      </li>
-                    </ol>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Color</legend>
-                    <ul class="filter-list">
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" name="colour" value="black" />
-                          <span>Black</span>
-                        </label>
-                      </li>
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" name="colour" value="white" />
-                          <span>White</span>
-                        </label>
-                      </li>
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" name="colour" value="grey" />
-                          <span>Grey</span>
-                        </label>
-                      </li>
-                      <li>
-                        <label class="custom-check">
-                          <input type="checkbox" name="colour" value="beige" />
-                          <span>Beige</span>
-                        </label>
-                      </li>
-                    </ul>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Ratings (above)</legend>
-                    <ol>
-                      <li>
-                        <label class="custom-radio">
-                          <input type="radio" name="rating" value="4" />
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                        </label>
-                      </li>
-                      <li>
-                        <label class="custom-radio">
-                          <input type="radio" name="rating" value="3" />
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                        </label>
-                      </li>
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="type" value="twin" />
+                        <span>Twin Beds</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="type" value="full" />
+                        <span>Full Beds</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="type" value="kids" />
+                        <span>Kids Beds</span>
+                      </label>
+                    </li>
+                  </ol>
+                </fieldset>
+                <fieldset>
+                  <legend>Color</legend>
+                  <ul class="filter-list">
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="colour" value="black" />
+                        <span>Black</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="colour" value="white" />
+                        <span>White</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="colour" value="grey" />
+                        <span>Grey</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="custom-check">
+                        <input type="checkbox" name="colour" value="beige" />
+                        <span>Beige</span>
+                      </label>
+                    </li>
+                  </ul>
+                </fieldset>
+                <fieldset>
+                  <legend>Ratings (above)</legend>
+                  <ol>
+                    <li>
+                      <label class="custom-radio">
+                        <input type="radio" name="rating" value="4" />
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="custom-radio">
+                        <input type="radio" name="rating" value="3" />
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                      </label>
+                    </li>
 
-                      <li>
-                        <label class="custom-radio">
-                          <input type="radio" name="rating" value="2" />
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                        </label>
-                      </li>
+                    <li>
+                      <label class="custom-radio">
+                        <input type="radio" name="rating" value="2" />
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                      </label>
+                    </li>
 
-                      <li>
-                        <label class="custom-radio">
-                          <input type="radio" name="rating" value="1" />
-                          <span class="material-icons-round star-rate">
-                            star
-                          </span>
-                        </label>
-                      </li>
-                    </ol>
-                  </fieldset>
-                </div>
+                    <li>
+                      <label class="custom-radio">
+                        <input type="radio" name="rating" value="1" />
+                        <span class="material-icons-round star-rate">
+                          star
+                        </span>
+                      </label>
+                    </li>
+                  </ol>
+                </fieldset>
                 <button type="submit" value="submit">Apply</button>
               </form>
             </div>
