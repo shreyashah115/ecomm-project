@@ -175,52 +175,65 @@ const filterProducts = (products) => {
   getProducts(filteredArray);
 };
 
-let filters = document.querySelector(`.filter-options-large`);
-filters.addEventListener(`input`, function (event) {
-  let filterName = event.target.name;
-  let filterValue = event.target.value;
-  let checked = event.target.checked;
-
-  if (filterName === `type`) {
-    if (checked) {
-      allFilters.type.push(filterValue);
-    } else {
-      allFilters.type.pop(filterValue);
-    }
-  } else if (filterName === `color`) {
-    if (checked) {
-      allFilters.color.push(filterValue);
-    } else {
-      allFilters.color.pop(filterValue);
-    }
-  } else if (filterName === `rating`) {
-    if (!event.target.disabled) {
-      allFilters.ratings = Number(filterValue);
-    }
+const filterOptions = () => {
+  let filters = document.querySelector(`.filter-options-large`);
+  if (!filters) {
+    return;
   }
+  filters.addEventListener(`input`, function (event) {
+    let filterName = event.target.name;
+    let filterValue = event.target.value;
+    let checked = event.target.checked;
 
-  filterProducts(products);
-});
+    if (filterName === `type`) {
+      if (checked) {
+        allFilters.type.push(filterValue);
+      } else {
+        allFilters.type.pop(filterValue);
+      }
+    } else if (filterName === `color`) {
+      if (checked) {
+        allFilters.color.push(filterValue);
+      } else {
+        allFilters.color.pop(filterValue);
+      }
+    } else if (filterName === `rating`) {
+      if (!event.target.disabled) {
+        allFilters.ratings = Number(filterValue);
+      }
+    }
+
+    filterProducts(products);
+  });
+};
+
+filterOptions();
 
 const fullStar = `<span class="material-icons-round star-rate"> star </span>`;
 const starBorder = `<span class="material-icons-round star-rate"> star_border </span>`;
 const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
 
-let filterButton = document.querySelector(`a.main-button.dialog`);
+const filterButtonClick = () => {
+  let filterButton = document.querySelector(`a.main-button.dialog`);
+  if (!filterButton) {
+    return;
+  }
+  filterButton.addEventListener(`click`, (event) => {
+    let overlay = document.querySelector(`.overlay`);
+    overlay.style.visibility = "visible";
+    overlay.style.opacity = 1;
+  });
 
-filterButton.addEventListener(`click`, (event) => {
-  let overlay = document.querySelector(`.overlay`);
-  overlay.style.visibility = "visible";
-  overlay.style.opacity = 1;
-});
+  let closeButton = document.querySelector(`a.close`);
 
-let closeButton = document.querySelector(`a.close`);
+  closeButton.addEventListener(`click`, (event) => {
+    let overlay = document.querySelector(`.overlay`);
+    overlay.style.visibility = "hidden";
+    overlay.style.opacity = 0;
+  });
+};
 
-closeButton.addEventListener(`click`, (event) => {
-  let overlay = document.querySelector(`.overlay`);
-  overlay.style.visibility = "hidden";
-  overlay.style.opacity = 0;
-});
+filterButtonClick();
 
 const getProducts = (products) => {
   let section = document.querySelector("#results");
