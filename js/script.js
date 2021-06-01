@@ -181,6 +181,7 @@ const filterOptions = () => {
     return;
   }
   filters.addEventListener(`input`, function (event) {
+    event.preventDefault();
     let filterName = event.target.name;
     let filterValue = event.target.value;
     let checked = event.target.checked;
@@ -226,7 +227,7 @@ const filterButtonClick = () => {
 
   let closeButton = document.querySelector(`a.close`);
 
-  closeButton.addEventListener(`click`, (event) => { 
+  closeButton.addEventListener(`click`, (event) => {
     let overlay = document.querySelector(`.overlay`);
     overlay.style.visibility = "hidden";
     overlay.style.opacity = 0;
