@@ -226,7 +226,7 @@ const filterButtonClick = () => {
 
   let closeButton = document.querySelector(`a.close`);
 
-  closeButton.addEventListener(`click`, (event) => {
+  closeButton.addEventListener(`click`, (event) => { 
     let overlay = document.querySelector(`.overlay`);
     overlay.style.visibility = "hidden";
     overlay.style.opacity = 0;
