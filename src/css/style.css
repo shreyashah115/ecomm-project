@@ -242,6 +242,7 @@ span.material-icons-round.nav-toggle {
 
 nav.pagination {
   display: flex;
+  padding-top: 3em;
   flex-direction: column;
   align-items: center;
 }
@@ -558,6 +559,10 @@ color:var(--icon-color);
     justify-content: space-between;
   }
 
+  .ratings-list {
+    display: flex;
+  }
+
   .toggle-menu, .menu {
     position: unset;
   }
@@ -698,8 +703,7 @@ color:var(--icon-color);
   
   .filter-options-large {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
   }
   
 
@@ -802,9 +806,10 @@ color:var(--icon-color);
 
 .filter-options-large {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
 
 .results {
   grid-template-columns: 1fr 1fr 1fr;

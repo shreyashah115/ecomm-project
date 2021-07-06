@@ -1,1 +1,4 @@
-.DS_Store
+.DS_Storenode_modules
+dist
+node_modules
+dist
