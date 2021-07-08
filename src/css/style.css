@@ -1,6 +1,14 @@
 /* Note there a few "reset" styles given in reset.css. Review those before you begin */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Nunito Sans', sans-serif;
+  src: local('Nunito Sans'), url(../fonts/NunitoSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Sans', sans-serif;
+  src: local('Nunito Sans'), url(../fonts/NunitoSans-Bold.ttf) format('truetype');
+}
 
 :root {
   --main-bg-color: #ffffff;
@@ -14,7 +22,11 @@
   --icon-color: #ffffff;
   --button-hover: #9b349b;
   --social-icons: #7f187f;
-  font-family:  'Nunito Sans', 'Helvetica', sans-serif;
+  font-family:  'Nunito Sans', sans-serif;
+}
+
+body {
+  font-family: inherit
 }
 
 @font-face {
@@ -578,6 +590,10 @@ color:var(--icon-color);
 }
 
 @media screen and (min-width: 70em) {
+
+  summary {
+    display: flex;
+  }
 
   .results-container {
     display: flex;

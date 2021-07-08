@@ -1,37 +1,40 @@
 {
   "name": "ecomm-store-project",
   "version": "1.0.0",
-  "description": "Lighthouse report,",
-  "main": "webpack.config.js",
+  "description": "E-commerce Store project,",
+  "main": "webpack.common.js",
   "scripts": {
-    "start": "webpack serve --mode development --history-api-fallback",
-    "build": "webpack --mode production"
+    "start": "webpack serve --history-api-fallback --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juneate/ecomm-store-project.git"
+    "url": "git+https://github.com/shreyashah115/ecomm-store-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/juneate/ecomm-store-project/issues"
+    "url": "https://github.com/shreyashah115/ecomm-store-project/issues"
   },
-  "homepage": "https://github.com/juneate/ecomm-store-project#readme",
+  "homepage": "https://github.com/shreyashah115/ecomm-store-project#readme",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
+    "css-minimizer-webpack-plugin": "^3.0.2",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
     "react-router-dom": "^5.2.0",
     "style-loader": "^3.0.0",
     "webpack": "^5.42.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "antd": "^4.16.6",

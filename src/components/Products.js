@@ -2,7 +2,8 @@ import React from "react";
 import Article from "./Article";
 import { useState, useEffect } from "react";
 import { Pagination, Empty } from "antd";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
+import "antd/lib/pagination/style/index.css";
 
 const Products = (props) => {
   console.log("---", props);
