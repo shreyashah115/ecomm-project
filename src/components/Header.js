@@ -1,6 +1,6 @@
 import React from "react";
-import siestaa from "img/siestaa.png";
-import siestaMobile from "img/siesta-mobile.png";
+import siestaa from "img/siestaa.webp";
+import siestaMobile from "img/siesta-mobile.webp";
 import Banner from "./Banner";
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
             sizes="(min-width: 1920px) 500px,
       (min-width: 800px) 500px,
       480px"
-            src="img/siesta-mobile.png"
+            src={siestaMobile}
             alt="Siesta logo"
           />
         </a>

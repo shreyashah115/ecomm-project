@@ -1,8 +1,8 @@
 import React from "react";
 import arrow from "img/svg/arrow.svg";
-import storageBed from "img/storage-bed.png";
-import twinBed from "img/twin-bed.png";
-import kidsBed from "img/kids-bed.png";
+import storageBed from "img/storage-bed.webp";
+import twinBed from "img/twin-bed.webp";
+import kidsBed from "img/kids-bed.webp";
 import { useState } from "react";
 import Results from "components/Results";
 import black from "img/bed-large/black.webp";

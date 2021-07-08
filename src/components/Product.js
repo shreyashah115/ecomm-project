@@ -7,8 +7,8 @@ import grey2 from "../img/bed-mobile/grey-2.webp";
 import facebook from "img/svg/facebook-square-brands.svg";
 import instagram from "img/svg/instagram-square-brands.svg";
 import twitter from "img/svg/twitter-square-brands.svg";
-import siestaa from "img/siestaa.png";
-import siestaMobile from "img/siesta-mobile.png";
+import siestaa from "img/siestaa.webp";
+import siestaMobile from "img/siesta-mobile.webp";
 
 const Product = () => {
   return (
