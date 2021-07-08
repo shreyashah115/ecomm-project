@@ -2,13 +2,12 @@ import React from "react";
 import Article from "./Article";
 import Filters from "components/Filters";
 import { useState } from "react";
-import { Pagination } from "antd";
+import { Pagination, Empty } from "antd";
 import "antd/dist/antd.css";
 
 const Results = ({ ...filters }) => {
   let filtersAndSort = { ...filters };
 
-  console.log({ ...filters });
   function importAll(r) {
     let images = {};
     r.keys().map((item) => {
@@ -465,10 +464,15 @@ const Results = ({ ...filters }) => {
       <section className="results" id="results">
         {allProducts}
       </section>
-      <nav aria-label="Pagination" className="pagination">
+      <Empty style={productLength < 1 ? {} : { display: "none" }} />
+      <nav
+        aria-label="Pagination"
+        className="pagination"
+        style={productLength > 0 ? {} : { display: "none" }}
+      >
         <p>
           {startRow + 1} to {endRow < productLength ? endRow : productLength} of{" "}
-          {productLength} products found
+          {productLength} {productLength === 1 ? `product` : `products`} found.
         </p>
 
         <Pagination
