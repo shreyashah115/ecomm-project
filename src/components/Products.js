@@ -116,6 +116,7 @@ const Products = (props) => {
 
         <Pagination
           defaultCurrent={currPage}
+          current={currPage}
           total={productLength}
           defaultPageSize={pageSize}
           onChange={(page) => setCurrPage(page)}
