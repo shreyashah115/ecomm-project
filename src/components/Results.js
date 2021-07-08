@@ -1,12 +1,9 @@
 import React from "react";
-import Article from "./Article";
-import { useState } from "react";
-import { Pagination, Empty } from "antd";
+import Products from "./Products";
+import { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 
-const Results = ({ ...filters }) => {
-  let filtersAndSort = { ...filters };
-
+const Results = (props) => {
   function importAll(r) {
     let images = {};
     r.keys().map((item) => {
@@ -347,142 +344,48 @@ const Results = ({ ...filters }) => {
     },
   ];
 
-  let sortOptions = filtersAndSort.sortOptions;
-  let filterOptions = filtersAndSort.allFilters;
+  let sortOptions = props.sortOptions;
+  let filterOptions = props.allFilters;
 
   let filteredArray = products;
 
-  if (filterOptions.type.length > 0) {
-    filteredArray = products.filter(function (product) {
-      return filterOptions.type.join().includes(product.type);
-    });
-  }
-
-  if (filterOptions.color.length > 0) {
-    filteredArray = filteredArray.filter(function (product) {
-      return filterOptions.color.join().includes(product.color);
-    });
-  }
-
-  if (filterOptions.ratings > 0) {
-    filteredArray = filteredArray.filter(function (product) {
-      return product.ratings >= filterOptions.ratings;
-    });
-  }
-
-  if (sortOptions == `high`) {
-    filteredArray.sort(
-      (firstItem, secondItem) => secondItem.amount - firstItem.amount
-    );
-  } else if (sortOptions == `low`) {
-    filteredArray.sort(
-      (firstItem, secondItem) => firstItem.amount - secondItem.amount
-    );
-  } else if (sortOptions == `ratings`) {
-    filteredArray.sort(
-      (firstItem, secondItem) => secondItem.ratings - firstItem.ratings
-    );
-  }
-
-  const fullStar = `<span class="material-icons-round star-rate"> star </span>`;
-  const starBorder = `<span class="material-icons-round star-rate"> star_border </span>`;
-  const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
-
-  filteredArray.forEach((product) => {
-    let index = 0;
-    let stars = [];
-
-    if (Number.isInteger(product.ratings)) {
-      while (index < product.ratings) {
-        stars.push(fullStar);
-        index++;
-      }
-    } else {
-      while (index < Math.floor(product.ratings)) {
-        stars.push(fullStar);
-        index++;
-      }
-      stars.push(halfStar);
-    }
-    let starLength = stars.length;
-
-    while (starLength < 5) {
-      stars.push(starBorder);
-      starLength++;
+  const FilterAllProducts = () => {
+    console.log("this is filtering code---");
+    if (filterOptions.type.length > 0) {
+      filteredArray = products.filter(function (product) {
+        return filterOptions.type.join().includes(product.type);
+      });
     }
 
-    let starString = stars.join(``);
-    product["starString"] = starString;
-  });
+    if (filterOptions.color.length > 0) {
+      filteredArray = filteredArray.filter(function (product) {
+        return filterOptions.color.join().includes(product.color);
+      });
+    }
 
-  const [currPage, setCurrPage] = useState(1);
-  const pageSize = 6;
-  const productLength = filteredArray.length;
-  const startRow = (currPage - 1) * pageSize;
-  const endRow = startRow + pageSize;
+    if (filterOptions.ratings > 0) {
+      filteredArray = filteredArray.filter(function (product) {
+        return product.ratings >= filterOptions.ratings;
+      });
+    }
 
-  let allProducts = filteredArray
-    .slice(startRow, endRow)
-    .map(
-      (
-        {
-          name,
-          description,
-          amount,
-          ratings,
-          type,
-          color,
-          total_ratings,
-          images,
-          alt,
-          starString,
-        },
-        index
-      ) => (
-        <Article
-          key={index}
-          name={name}
-          description={description}
-          amount={amount}
-          ratings={ratings}
-          type={type}
-          color={color}
-          total_ratings={total_ratings}
-          images={images}
-          alt={alt}
-          starString={starString}
-        />
-      )
-    );
-  return (
-    <>
-      <div className="results-container">
-        <h2 className="subheading">Results</h2>
-      </div>
+    if (sortOptions == `high`) {
+      filteredArray.sort(
+        (firstItem, secondItem) => secondItem.amount - firstItem.amount
+      );
+    } else if (sortOptions == `low`) {
+      filteredArray.sort(
+        (firstItem, secondItem) => firstItem.amount - secondItem.amount
+      );
+    } else if (sortOptions == `ratings`) {
+      filteredArray.sort(
+        (firstItem, secondItem) => secondItem.ratings - firstItem.ratings
+      );
+    }
+  };
+  FilterAllProducts();
 
-      <section className="results" id="results">
-        {allProducts}
-      </section>
-      <Empty style={productLength < 1 ? {} : { display: "none" }} />
-      <nav
-        aria-label="Pagination"
-        className="pagination"
-        style={productLength > 0 ? {} : { display: "none" }}
-      >
-        <p>
-          {startRow + 1} to {endRow < productLength ? endRow : productLength} of{" "}
-          {productLength} {productLength === 1 ? `product` : `products`} found.
-        </p>
-
-        <Pagination
-          defaultCurrent={currPage}
-          total={productLength}
-          defaultPageSize={pageSize}
-          onChange={(page) => setCurrPage(page)}
-        />
-      </nav>
-    </>
-  );
+  return <Products filteredProducts={filteredArray} currentPage={1} />;
 };
 
 export default Results;

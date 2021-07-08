@@ -16,8 +16,6 @@ const Filters = () => {
   });
 
   const filterChange = (event) => {
-    console.log("Filter Event", event);
-
     let filterName = event.target.name;
 
     let filterValue = event.target.value;
@@ -42,7 +40,6 @@ const Filters = () => {
           color: [...allFilters.color, filterValue],
         });
       } else {
-        console.log("IN HERE WE BREAK");
         setAllFilters({
           ...allFilters,
           color: allFilters.color.filter((color) => color !== filterValue),
@@ -346,7 +343,7 @@ const Filters = () => {
           </details>
         </form>
       </header>
-      <Results sortOptions={sortState} allFilters={allFilters} />
+      <Results sortOptions={sortState} allFilters={allFilters} page={1} />
     </main>
   );
 };
