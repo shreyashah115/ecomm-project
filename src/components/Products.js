@@ -1,19 +1,16 @@
 import React from "react";
-import Article from "./Article";
+import Article from "../Pages/Article";
 import { useState, useEffect } from "react";
 import { Pagination, Empty } from "antd";
-// import "antd/dist/antd.css";
 import "antd/lib/pagination/style/index.css";
 
 const Products = (props) => {
-  console.log("---", props);
   const [currPage, setCurrPage] = useState(props.currentPage);
 
   useEffect(() => {
     setCurrPage(props.currentPage);
   }, [props]);
 
-  console.log(currPage);
   let allProducts = [];
   let productLength;
   let pageSize;
@@ -24,8 +21,7 @@ const Products = (props) => {
     const fullStar = `<span class="material-icons-round star-rate"> star </span>`;
     const starBorder = `<span class="material-icons-round star-rate"> star_border </span>`;
     const halfStar = `<span class="material-icons-round star-rate"> star_half </span>`;
-    console.log("this thing is not being run");
-    console.log(props.filteredProducts.length);
+
     props.filteredProducts.forEach((product) => {
       let index = 0;
       let stars = [];

@@ -1,9 +1,10 @@
 import React from "react";
 
-import Header from "components/Header";
-import Filters from "components/Filters";
-import Results from "components/Results";
-import Footer from "components/Footer";
+import loadable from "@loadable/component";
+
+const Header = loadable(() => import("components/Header"));
+const Filters = loadable(() => import("components/Filters"));
+const Footer = loadable(() => import("components/Footer"));
 
 const App = () => {
   return (

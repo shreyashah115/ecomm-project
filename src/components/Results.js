@@ -1,8 +1,7 @@
 import React from "react";
-import Products from "./Products";
-import { useState, useEffect } from "react";
-// import "antd/dist/antd.css";
+import loadable from "@loadable/component";
 
+const Products = loadable(() => import("./Products"));
 
 const Results = (props) => {
   function importAll(r) {

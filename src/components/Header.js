@@ -1,7 +1,7 @@
 import React from "react";
 import siestaa from "img/siestaa.webp";
 import siestaMobile from "img/siesta-mobile.webp";
-import Banner from "./Banner";
+import Banner from "../Pages/Banner";
 
 const Header = () => {
   return (
