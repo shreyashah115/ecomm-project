@@ -3,6 +3,7 @@ import Article from "../Pages/Article";
 import { useState, useEffect } from "react";
 import { Pagination, Empty } from "antd";
 import "antd/lib/pagination/style/index.css";
+import "antd/lib/empty/style/index.css";
 
 const Products = (props) => {
   const [currPage, setCurrPage] = useState(props.currentPage);
