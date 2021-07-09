@@ -593,6 +593,15 @@ color:var(--icon-color);
 
 @media screen and (min-width: 70em) {
 
+  section#results {
+    min-height: 10em;
+  }
+
+  .ant-empty {
+    margin-top: -7em !important;
+    margin-bottom: 7em !important;
+  }
+
   summary {
     display: flex;
   }
