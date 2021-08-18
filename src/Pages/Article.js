@@ -1,8 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import firebase from "utils/firebase";
+import ButtonIncrement from "components/ButtonIncrement";
+import ButtonDecrement from "components/ButtonDecrement";
+import Display from "components/Display";
 
 const Article = ({ ...productDetails }) => {
   let product = { ...productDetails };
+  const db = firebase.firestore();
+
+  const [favorite, setFav] = useState(product.fav);
+  const [cartValue, setCart] = useState(product.cart);
+
+  const incrementCounter = () => {
+    updateCart("inc");
+  };
+  const decrementCounter = () => {
+    if (cartValue == 0) {
+      return;
+    }
+    updateCart("dec");
+  };
+
+  const setFavorite = (e) => {
+    // console.log("-=-=-", product);
+    console.log(favorite);
+    db.collection("products")
+      .doc(product.slug)
+      .update({
+        fav: !favorite,
+      })
+      .then(() => {
+        setFav(!favorite);
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  };
+
+  const updateCart = (operator) => {
+    if (operator == "inc") {
+      db.collection("products")
+        .doc(product.slug)
+        .update({
+          cart: cartValue + 1,
+        })
+        .then(() => {
+          setCart(cartValue + 1);
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
+    } else {
+      db.collection("products")
+        .doc(product.slug)
+        .update({
+          cart: cartValue - 1,
+        })
+        .then(() => {
+          setCart(cartValue - 1);
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
+    }
+  };
+
   return (
     <section className="Article product">
       <header>
@@ -48,10 +114,32 @@ const Article = ({ ...productDetails }) => {
           <span className="material-icons-round"> add_shopping_cart </span> Add
           to Cart
         </button>
-        <button type="button" className="main-button add-wishlist">
-          <span className="material-icons-round add-fav">favorite_border</span>
-          Add to wishlist
-        </button>
+
+        <ButtonIncrement onClickFunc={incrementCounter} />
+        <Display message={cartValue} />
+        <ButtonDecrement onClickFunc={decrementCounter} />
+
+        {favorite ? (
+          <button
+            type="button"
+            className="main-button add-wishlist"
+            onClick={(e) => setFavorite(e)}
+          >
+            <span className="material-icons-round add-fav">favorite</span>
+            Remove from favorites
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="main-button add-wishlist"
+            onClick={(e) => setFavorite(e)}
+          >
+            <span className="material-icons-round add-fav">
+              favorite_border
+            </span>
+            Add to favorites
+          </button>
+        )}
       </footer>
     </section>
   );

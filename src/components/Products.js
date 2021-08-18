@@ -70,6 +70,8 @@ const Products = (props) => {
             total_ratings,
             images,
             alt,
+            fav,
+            cart,
             starString,
           },
           index
@@ -86,6 +88,8 @@ const Products = (props) => {
             total_ratings={total_ratings}
             images={images}
             alt={alt}
+            fav={fav}
+            cart={cart}
             starString={starString}
           />
         )

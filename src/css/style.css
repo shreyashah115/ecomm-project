@@ -396,7 +396,7 @@ select#sort {
 .main-button {
   display: flex;
   align-items: center;
-  padding: 0.1em;
+  padding: 1.1em;
   width: 7em;
   height: 3em;
   font-size: 1em;
