@@ -1,5 +1,5 @@
 import React from "react";
-import Article from "../Pages/Article";
+import Article from "pages/Article";
 import { useState, useEffect } from "react";
 import { Pagination, Empty } from "antd";
 import "antd/lib/pagination/style/index.css";
@@ -60,6 +60,7 @@ const Products = (props) => {
       .map(
         (
           {
+            slug,
             name,
             description,
             amount,
@@ -75,6 +76,7 @@ const Products = (props) => {
         ) => (
           <Article
             key={index}
+            slug={slug}
             name={name}
             description={description}
             amount={amount}

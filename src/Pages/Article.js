@@ -1,25 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Article = ({ ...productDetails }) => {
   let product = { ...productDetails };
-  let productPage = "../product.html";
   return (
     <section className="Article product">
       <header>
-        <a href={productPage}>
+        <Link to={`/product/${product.slug}`}>
           <div className="image-container">
             <img
               className="product"
-              srcSet={`${product.images[0].default} 1920w, ${product.images[0].default} 960w, ${product.images[1].default} 480w`}
+              srcSet={`${product.images[0]} 1920w, ${product.images[0]} 960w, ${product.images[1]} 480w`}
               sizes="(min-width: 1920px) 500px,
           (min-width: 800px) 500px,
           480px"
-              src={product.images[0].default}
+              src={product.images[0]}
               alt={product.alt}
             />
             <img
               className="product-2"
-              srcSet={`${product.images[3].default} 1920w, ${product.images[3].default} 960w`}
+              srcSet={`${product.images[3]} 1920w, ${product.images[3]} 960w`}
               sizes="(min-width: 1920px) 500px,
             (min-width: 800px) 500px,
             480px"
@@ -27,7 +27,7 @@ const Article = ({ ...productDetails }) => {
               alt={product.alt}
             />
           </div>
-        </a>
+        </Link>
 
         <h3>{product.name}</h3>
         <p>{product.description}</p>

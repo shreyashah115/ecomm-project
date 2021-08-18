@@ -1,23 +1,16 @@
 import React from "react";
 import siestaa from "img/siestaa.webp";
 import siestaMobile from "img/siesta-mobile.webp";
-import Banner from "../Pages/Banner";
+import Banner from "pages/Banner";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
       <header className="page-header">
-        <a href="index.html" className="logo">
-          <img
-            className="product"
-            srcSet={`${siestaa} 1920w, ${siestaa} 960w, ${siestaMobile} 480w`}
-            sizes="(min-width: 1920px) 500px,
-      (min-width: 800px) 500px,
-      480px"
-            src={siestaMobile}
-            alt="Siesta logo"
-          />
-        </a>
+        <Link to="/" className="logo">
+          <img src={siestaMobile} alt="logo" />
+        </Link>
 
         <nav aria-label="Primary" className="navigation">
           <button className="toggle-menu" id="toggle-menu">

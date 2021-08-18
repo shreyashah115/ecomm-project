@@ -1,18 +1,76 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
+import firebase from "utils/firebase";
 
 import loadable from "@loadable/component";
 
 const Header = loadable(() => import("components/Header"));
+const Product = loadable(() => import("components/Product"));
 const Filters = loadable(() => import("components/Filters"));
 const Footer = loadable(() => import("components/Footer"));
+const Layout = loadable(() => import("components/Layout"));
+const FourOhFour = loadable(() => import("components/FourOhFour"));
 
 const App = () => {
+  const [products, setProducts] = useState({
+    productsData: [],
+    loading: true,
+  });
+  const { productsData, loading } = products;
+
+  const db = firebase.firestore();
+
+  useEffect(() => {
+    setProducts({
+      productsData: [...productsData],
+      loading: true,
+    });
+
+    // READ: student data
+    db.collection(`products`)
+      .get()
+      .then((snapshot) => {
+        setProducts({
+          productsData: snapshot.docs.reduce(
+            (products, doc) => [...products, doc.data()],
+            []
+          ),
+          loading: false,
+        });
+      });
+  }, []);
+
   return (
-    <>
-      <Header />
-      <Filters />
-      <Footer />
-    </>
+    <Router>
+      {/* <UserContext.Provider value={{data:userData, updateUsername:updateUsername}}> */}
+      <Switch>
+        <Route exact path="/">
+          <Layout>
+            <Header />
+            <Filters data={products} />
+            <Footer />
+          </Layout>
+        </Route>
+
+        <Route path="/product/:slug" children={<Product data={products} />} />
+        {/* <Route path="/product/:slug" children={<Product />} /> */}
+
+        <Route path="*">
+          <FourOhFour />
+        </Route>
+        <Route path="/404">
+          <FourOhFour />
+        </Route>
+        <Redirect to="/404" />
+      </Switch>
+      {/* </UserContext.Provider> */}
+    </Router>
   );
 };
 
@@ -58,36 +116,3 @@ export default App;
 //     menuIcon.style.display = `block`;
 //   }
 // });
-
-// const showSlides = (n) => {
-//   let i;
-//   let slides = document.getElementsByClassName("mySlides");
-//   if (slides.length === 0) return;
-
-//   let dots = document.getElementsByClassName("img-bg");
-//   if (n > slides.length) {
-//     slideIndex = 1;
-//   }
-//   if (n < 1) {
-//     slideIndex = slides.length;
-//   }
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex - 1].style.display = "block";
-//   dots[slideIndex - 1].className += " active";
-// };
-
-// let slideIndex = 1;
-// showSlides(slideIndex);
-
-// const plusSlides = (n) => {
-//   showSlides((slideIndex += n));
-// };
-
-// const currentSlide = (n) => {
-//   showSlides((slideIndex = n));
-// };

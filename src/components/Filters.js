@@ -7,7 +7,7 @@ import { useState } from "react";
 import Results from "components/Results";
 import black from "img/bed-large/black.webp";
 
-const Filters = () => {
+const Filters = ({ data }) => {
   const [sortState, setSortState] = useState(`best`);
   const [allFilters, setAllFilters] = useState({
     type: [],
@@ -343,7 +343,12 @@ const Filters = () => {
           </details>
         </form>
       </header>
-      <Results sortOptions={sortState} allFilters={allFilters} page={1} />
+      <Results
+        sortOptions={sortState}
+        allFilters={allFilters}
+        page={1}
+        data={data}
+      />
     </main>
   );
 };
