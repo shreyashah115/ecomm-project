@@ -1,2 +1,0 @@
-(self.webpackChunkecomm_store_project=self.webpackChunkecomm_store_project||[]).push([[821],{1821:(e,t,c)=>{"use strict";c.r(t),c.d(t,{default:()=>s});var r=c(7294);const s=function(e){var t=e.children;return r.createElement("div",{className:"layout"},t)}}}]);
-//# sourceMappingURL=821.js.map

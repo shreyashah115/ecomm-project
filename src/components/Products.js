@@ -1,5 +1,5 @@
 import React from "react";
-import Article from "pages/Article";
+import Article from "../pages/Article";
 import { useState, useEffect } from "react";
 import { Pagination, Empty } from "antd";
 import "antd/lib/pagination/style/index.css";
