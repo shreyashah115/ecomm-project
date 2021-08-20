@@ -5,21 +5,21 @@ const Products = loadable(() => import("./Products"));
 
 const Results = (props) => {
 
-  function importAll(r) {
-    let images = {};
-    r.keys().map((item) => {
-      images[item.replace("./", "")] = r(item);
-    });
-    return images;
-  }
+  // function importAll(r) {
+  //   let images = {};
+  //   r.keys().map((item) => {
+  //     images[item.replace("./", "")] = r(item);
+  //   });
+  //   return images;
+  // }
 
-  const images = importAll(
-    require.context("img/bed-large", false, /\.(png|jpg|svg|webp)$/)
-  );
+  // const images = importAll(
+  //   require.context("img/bed-large", false, /\.(png|jpg|svg|webp)$/)
+  // );
 
-  const mobileImages = importAll(
-    require.context("img/bed-mobile", false, /\.(png|jpg|svg|webp)$/)
-  );
+  // const mobileImages = importAll(
+  //   require.context("img/bed-mobile", false, /\.(png|jpg|svg|webp)$/)
+  // );
 
 
   // const products = [

@@ -4,6 +4,7 @@ import firebase from "utils/firebase";
 import ButtonIncrement from "components/ButtonIncrement";
 import ButtonDecrement from "components/ButtonDecrement";
 import Display from "components/Display";
+import styled, { css } from "styled-components";
 
 const Article = ({ ...productDetails }) => {
   let product = { ...productDetails };
@@ -110,15 +111,22 @@ const Article = ({ ...productDetails }) => {
       </header>
 
       <footer className="product-footer">
-        <button type="button" className="main-button add-cart">
-          <span className="material-icons-round"> add_shopping_cart </span> Add
-          to Cart
-        </button>
-
-        <ButtonIncrement onClickFunc={incrementCounter} />
-        <Display message={cartValue} />
-        <ButtonDecrement onClickFunc={decrementCounter} />
-
+        {cartValue == 0 ? (
+          <button
+            type="button"
+            className="main-button add-cart"
+            onClick={() => updateCart("inc")}
+          >
+            <span className="material-icons-round"> add_shopping_cart </span>{" "}
+            Add to Cart
+          </button>
+        ) : (
+          <CartButtons>
+            <ButtonDecrement onClickFunc={decrementCounter} />
+            <Display message={cartValue} />
+            <ButtonIncrement onClickFunc={incrementCounter} />
+          </CartButtons>
+        )}
         {favorite ? (
           <button
             type="button"
@@ -144,5 +152,13 @@ const Article = ({ ...productDetails }) => {
     </section>
   );
 };
+
+const CartButtons = styled.div`
+  display: flex;
+  width: 10em;
+  height: 2.5em;
+  margin-top: 1.5em;
+  margin-right: 1em;
+`;
 
 export default Article;

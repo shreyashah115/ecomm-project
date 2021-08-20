@@ -1,7 +1,5 @@
 import React from "react";
-import siestaa from "img/siestaa.webp";
 import siestaMobile from "img/siesta-mobile.webp";
-import Banner from "pages/Banner";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -58,14 +56,14 @@ const Header = () => {
           <a href="#">
             <span className="material-icons-round favorite_border"> </span>
           </a>
-          <a href="#">
+
+          <Link to={`/cart`}>
             <span className="material-icons-round shopping-cart">
               shopping_cart
             </span>
-          </a>
+          </Link>
         </div>
       </header>
-      <Banner />
     </>
   );
 };

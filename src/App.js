@@ -11,7 +11,9 @@ import firebase from "utils/firebase";
 import loadable from "@loadable/component";
 
 const Header = loadable(() => import("components/Header"));
+const Banner = loadable(() => import("./pages/Banner"));
 const Product = loadable(() => import("components/Product"));
+const Cart = loadable(() => import("components/Cart"));
 const Filters = loadable(() => import("components/Filters"));
 const Footer = loadable(() => import("components/Footer"));
 const Layout = loadable(() => import("components/Layout"));
@@ -53,6 +55,7 @@ const App = () => {
         <Route exact path="/">
           <Layout>
             <Header />
+            <Banner />
             <Filters data={products} />
             <Footer />
           </Layout>
@@ -60,6 +63,7 @@ const App = () => {
 
         <Route path="/product/:slug" children={<Product data={products} />} />
         {/* <Route path="/product/:slug" children={<Product />} /> */}
+        <Route path="/cart" children={<Cart data={products} />} />
 
         <Route path="*">
           <FourOhFour />
