@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import firebase from "utils/firebase";
 import ButtonIncrement from "components/ButtonIncrement";
 import ButtonDecrement from "components/ButtonDecrement";
 import Display from "components/Display";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Article = ({ ...productDetails }) => {
   let product = { ...productDetails };
   const db = firebase.firestore();
-
   const [favorite, setFav] = useState(product.fav);
   const [cartValue, setCart] = useState(product.cart);
 
@@ -24,7 +23,6 @@ const Article = ({ ...productDetails }) => {
   };
 
   const setFavorite = (e) => {
-    // console.log("-=-=-", product);
     console.log(favorite);
     db.collection("products")
       .doc(product.slug)

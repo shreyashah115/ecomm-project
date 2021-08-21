@@ -843,7 +843,7 @@ color:var(--icon-color);
 
  .products, .page-footer {
     width: 90em;
-    margin: 0 auto;
+    margin: 0 1em;
   }
 
   .page-header {

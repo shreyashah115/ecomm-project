@@ -5,9 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-
-import firebase from "utils/firebase";
-
+import { getProducts } from "utils/firebase";
 import loadable from "@loadable/component";
 
 const Header = loadable(() => import("components/Header"));
@@ -26,31 +24,17 @@ const App = () => {
   });
   const { productsData, loading } = products;
 
-  const db = firebase.firestore();
-
   useEffect(() => {
-    setProducts({
-      productsData: [...productsData],
-      loading: true,
-    });
-
-    // READ: student data
-    db.collection(`products`)
-      .get()
-      .then((snapshot) => {
-        setProducts({
-          productsData: snapshot.docs.reduce(
-            (products, doc) => [...products, doc.data()],
-            []
-          ),
-          loading: false,
-        });
+    getProducts().then((doc) => {
+      setProducts({
+        productsData: doc,
+        loading: false,
       });
-  }, []);
+    });
+  });
 
   return (
     <Router>
-      {/* <UserContext.Provider value={{data:userData, updateUsername:updateUsername}}> */}
       <Switch>
         <Route exact path="/">
           <Layout>
@@ -62,7 +46,6 @@ const App = () => {
         </Route>
 
         <Route path="/product/:slug" children={<Product data={products} />} />
-        {/* <Route path="/product/:slug" children={<Product />} /> */}
         <Route path="/cart" children={<Cart data={products} />} />
 
         <Route path="*">
@@ -73,50 +56,8 @@ const App = () => {
         </Route>
         <Redirect to="/404" />
       </Switch>
-      {/* </UserContext.Provider> */}
     </Router>
   );
 };
 
 export default App;
-
-// const filterButtonClick = () => {
-//   let filterButton = document.querySelector(`a.main-button.dialog`);
-//   if (!filterButton) {
-//     return;
-//   }
-//   filterButton.addEventListener(`click`, (event) => {
-//     let overlay = document.querySelector(`.overlay`);
-//     overlay.style.visibility = "visible";
-//     overlay.style.opacity = 1;
-//   });
-
-//   let closeButton = document.querySelector(`a.close`);
-
-//   closeButton.addEventListener(`click`, (event) => {
-//     let overlay = document.querySelector(`.overlay`);
-//     overlay.style.visibility = "hidden";
-//     overlay.style.opacity = 0;
-//   });
-// };
-
-// filterButtonClick();
-
-// let navToggle = document.querySelector(`#toggle-menu`);
-// let menu = document.querySelector(`.menu`);
-// let closeIcon = document.querySelector(`.close-icon`);
-// let menuIcon = document.querySelector(`.menu-icon`);
-
-// navToggle.addEventListener(`click`, (event) => {
-//   let menu = document.getElementById(`menu`);
-
-//   if (!menu.style.display || menu.style.display === `none`) {
-//     menu.style.display = `block`;
-//     closeIcon.style.display = `block`;
-//     menuIcon.style.display = `none`;
-//   } else {
-//     menu.style.display = `none`;
-//     closeIcon.style.display = `none`;
-//     menuIcon.style.display = `block`;
-//   }
-// });

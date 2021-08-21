@@ -11,4 +11,16 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+export const getProducts = () => {
+  return new Promise((resolve, reject) => {
+    db.collection("products").onSnapshot((snapshot) => {
+      let updatedData = snapshot.docs.map((doc) => doc.data());
+      resolve(updatedData);
+    }, reject);
+  });
+};
+
 export default firebase;

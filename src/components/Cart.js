@@ -1,15 +1,20 @@
-import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import Header from "components/Header";
 import Layout from "components/Layout";
 import facebook from "img/svg/facebook-square-brands.svg";
 import instagram from "img/svg/instagram-square-brands.svg";
 import twitter from "img/svg/twitter-square-brands.svg";
-import siestaMobile from "img/siesta-mobile.webp";
 
 const Product = ({ data }) => {
   let products = data.productsData;
   const loading = data.loading;
+  let totalCartQty = 0;
+  products.map((a) => {
+    return (totalCartQty += a.cart);
+  });
+
+  const allProducts = products.filter((product) => product.cart > 0);
 
   return (
     <>
@@ -19,6 +24,24 @@ const Product = ({ data }) => {
         <Layout>
           <Header />
           <hr />
+          <Products className="productsInCart">
+            {allProducts &&
+              allProducts.map((product) => {
+                if (totalCartQty) {
+                  return (
+                    <Item className="bed-item" key={product.slug}>
+                      <Image src={product.images[0]} alt={product.alt} />
+                      <p>
+                        {product.name}, {product.color}
+                      </p>
+                      <p>${product.amount * product.cart}.00</p>
+                      <p>Qty: {product.cart}</p>
+                    </Item>
+                  );
+                }
+              })}
+            {totalCartQty ? <></> : <NoItems>No items in the cart.</NoItems>}
+          </Products>
 
           <footer className="page-footer">
             <nav aria-label="Legal" className="footer-nav">
@@ -61,5 +84,34 @@ const Product = ({ data }) => {
     </>
   );
 };
+
+const Products = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Item = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #f3f3f5;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 50em;
+  padding: 1em;
+  padding-bottom: 0;
+  box-shadow: 0px 2px 4px #ccbccc;
+`;
+
+const NoItems = styled.p`
+margin: 0 auto;
+max-width: 50em;
+font-size: 1.5em;
+  color: #7f187f;
+}`;
+
+const Image = styled.img`
+  width: 10em;
+  margin-bottom: 1em;
+`;
 
 export default Product;

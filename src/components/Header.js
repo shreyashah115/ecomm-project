@@ -18,9 +18,10 @@ const Header = () => {
 
           <ul className="menu" id="menu">
             <li className="dropdown">
-              <a className="menu-links" href="#">
+              <Link to="/" className="menu-links">
                 Products
-              </a>
+              </Link>
+
               <div className="dropdown-content">
                 <a href="#">Beds</a>
                 <a href="#">Sofa beds</a>

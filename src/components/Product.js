@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-
+import styled, { css } from "styled-components";
 import Layout from "components/Layout";
 import product2 from "img/product/image-2.webp";
 import product3 from "img/product/image-3.webp";
