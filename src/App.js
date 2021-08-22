@@ -26,7 +26,6 @@ const App = () => {
   const { productsData, loading } = products;
 
   const [cartQty, setCart] = useState(0);
-  const [favQty, setFav] = useState(0);
 
   useEffect(() => {
     getProducts().then((doc) => {
