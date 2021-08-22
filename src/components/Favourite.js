@@ -6,15 +6,15 @@ import facebook from "img/svg/facebook-square-brands.svg";
 import instagram from "img/svg/instagram-square-brands.svg";
 import twitter from "img/svg/twitter-square-brands.svg";
 
-const Cart = ({ data }) => {
+const Favourite = ({ data }) => {
   let products = data.productsData;
   const loading = data.loading;
   let totalCartQty = 0;
   products.map((a) => {
-    return (totalCartQty += a.cart);
+    return (totalCartQty += a.fav);
   });
 
-  const allProducts = products.filter((product) => product.cart > 0);
+  const allProducts = products.filter((product) => product.fav > 0);
 
   return (
     <>
@@ -114,4 +114,4 @@ const Image = styled.img`
   margin-bottom: 1em;
 `;
 
-export default Cart;
+export default Favourite;

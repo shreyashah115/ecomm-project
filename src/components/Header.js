@@ -54,9 +54,9 @@ const Header = () => {
           </form>
         </div>
         <div className="additional-links">
-          <a href="#">
+          <Link to={`/favourites`}>
             <span className="material-icons-round favorite_border"> </span>
-          </a>
+          </Link>
 
           <Link to={`/cart`}>
             <span className="material-icons-round shopping-cart">
