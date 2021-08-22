@@ -35,7 +35,6 @@ const Favourite = ({ data }) => {
                         {product.name}, {product.color}
                       </p>
                       <p>${product.amount * product.fav}.00</p>
-                      <p>Qty: {product.fav}</p>
                     </Item>
                   );
                 }
