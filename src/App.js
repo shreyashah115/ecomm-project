@@ -25,6 +25,9 @@ const App = () => {
   });
   const { productsData, loading } = products;
 
+  const [cartQty, setCart] = useState(0);
+  const [favQty, setFav] = useState(0);
+
   useEffect(() => {
     getProducts().then((doc) => {
       setProducts({
@@ -32,6 +35,11 @@ const App = () => {
         loading: false,
       });
     });
+    let totalCartQty = 0;
+    productsData.map((a) => {
+      return (totalCartQty += a.cart);
+    });
+    setCart(totalCartQty);
   });
 
   return (
@@ -39,7 +47,7 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Layout>
-            <Header />
+            <Header totalCart={cartQty} />
             <Banner />
             <Filters data={products} />
             <Footer />

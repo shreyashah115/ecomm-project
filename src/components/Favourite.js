@@ -9,9 +9,9 @@ import twitter from "img/svg/twitter-square-brands.svg";
 const Favourite = ({ data }) => {
   let products = data.productsData;
   const loading = data.loading;
-  let totalCartQty = 0;
+  let totalFavQty = 0;
   products.map((a) => {
-    return (totalCartQty += a.fav);
+    return (totalFavQty += a.fav);
   });
 
   const allProducts = products.filter((product) => product.fav > 0);
@@ -27,20 +27,26 @@ const Favourite = ({ data }) => {
           <Products className="productsInCart">
             {allProducts &&
               allProducts.map((product) => {
-                if (totalCartQty) {
+                if (totalFavQty) {
                   return (
                     <Item className="bed-item" key={product.slug}>
                       <Image src={product.images[0]} alt={product.alt} />
                       <p>
                         {product.name}, {product.color}
                       </p>
-                      <p>${product.amount * product.cart}.00</p>
-                      <p>Qty: {product.cart}</p>
+                      <p>${product.amount * product.fav}.00</p>
+                      <p>Qty: {product.fav}</p>
                     </Item>
                   );
                 }
               })}
-            {totalCartQty ? <></> : <NoItems>No items in the cart.</NoItems>}
+            {totalFavQty ? (
+              <></>
+            ) : (
+              <NoItems>
+                Uh oh, nothing here. Maybe go add some favourites?
+              </NoItems>
+            )}
           </Products>
 
           <footer className="page-footer">

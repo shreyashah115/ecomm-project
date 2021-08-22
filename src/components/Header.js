@@ -2,7 +2,7 @@ import React from "react";
 import siestaMobile from "img/siesta-mobile.webp";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <header className="page-header">
@@ -62,6 +62,7 @@ const Header = () => {
             <span className="material-icons-round shopping-cart">
               shopping_cart
             </span>
+            <span>{props.totalCart}</span>
           </Link>
         </div>
       </header>
